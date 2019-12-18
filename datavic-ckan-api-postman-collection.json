@@ -1,0 +1,636 @@
+{
+    "id": "db86cc34cb1957d1368838e491da9a93",
+    "name": "DataVic CKAN API",
+    "description": null,
+    "auth": null,
+    "events": null,
+    "variables": [],
+    "order": [],
+    "folders_order": [],
+    "folders": [],
+    "requests": [
+        {
+            "id": "d0cf330d73738228a6edeb21cb523a4a",
+            "name": "Metadata about a specific group that has contributed data to the open data repository",
+            "url": "http:\/\/api.vic.gov.au:443\/datavic\/v1.2\/group_show",
+            "description": "",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "id",
+                    "description": "The ID of the Group that you wish to view.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "include_packages",
+                    "description": "Return Packages with the group, or just the group details.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "db86cc34cb1957d1368838e491da9a93",
+            "rawModeData": ""
+        },
+        {
+            "id": "3213b7b178cb526f0197f1ac23503a95",
+            "name": "Show a particular resource by ID",
+            "url": "http:\/\/api.vic.gov.au:443\/datavic\/v1.2\/resource_show",
+            "description": "",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "id",
+                    "description": "The ID of the Group that you wish to view.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "include_tracking",
+                    "description": "add tracking information to dataset and resources",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "db86cc34cb1957d1368838e491da9a93",
+            "rawModeData": ""
+        },
+        {
+            "id": "47bb9d1fa47c430119dcecee0ac3427b",
+            "name": "List of all Packages that match the given string.",
+            "url": "http:\/\/api.vic.gov.au:443\/datavic\/v1.2\/package_autocomplete",
+            "description": "",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "q",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "limit",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "db86cc34cb1957d1368838e491da9a93",
+            "rawModeData": ""
+        },
+        {
+            "id": "ce0b6669e2ac51d902606e01b428c1fc",
+            "name": "List of all Groups that exist in the Open Data repository.",
+            "url": "http:\/\/api.vic.gov.au:443\/datavic\/v1.2\/group_list",
+            "description": "",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "sort",
+                    "description": "Default: \"name asc\" string of field name and sort-order. The allowed fields are \u2018name\u2019 and \u2018packages\u2019",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "groups",
+                    "description": "a list of names of the groups to return, if given only groups whose names are in this list will be returned (optional)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "all_fields",
+                    "description": "return group dictionaries instead of just names. Only core fields are returned. Returning a list of Packages is too expensive, so the Packages property for each group is deprecated, but there is a count of the Packages in the Package_count property. (optional, values: true or blank). False will still return full sets, use blank for just names.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "db86cc34cb1957d1368838e491da9a93",
+            "rawModeData": ""
+        },
+        {
+            "id": "d4e7298818644d2127a893d820d95372",
+            "name": "Display of a single data container within the open data repository.",
+            "url": "http:\/\/api.vic.gov.au:443\/datavic\/v1.2\/package_show",
+            "description": "",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "id",
+                    "description": "The ID of the Group that you wish to view.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "callback",
+                    "description": "JSONP function wrapper for the response.  Use this if you are calling the API inline from your browser.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "db86cc34cb1957d1368838e491da9a93",
+            "rawModeData": ""
+        },
+        {
+            "id": "cae3380c0ccf7bbbf98186120899ebe4",
+            "name": "Returns a list of the recently changed Packages",
+            "url": "http:\/\/api.vic.gov.au:443\/datavic\/v1.2\/recently_changed_packages_activity_list",
+            "description": "",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "offset",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "limit",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "db86cc34cb1957d1368838e491da9a93",
+            "rawModeData": ""
+        },
+        {
+            "id": "31f3a5ee87322c441286e33e84fc364a",
+            "name": "Show the list of Packages that are within a group",
+            "url": "http:\/\/api.vic.gov.au:443\/datavic\/v1.2\/group_package_show",
+            "description": "",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "id",
+                    "description": "The ID of the Group that you wish to view.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "limit",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "db86cc34cb1957d1368838e491da9a93",
+            "rawModeData": ""
+        },
+        {
+            "id": "2b02b101d3127f2758e401b61c5b4e3c",
+            "name": "Search functionality to perform inspection of a specified supported resource file. Note: Support is limited to CSV files.",
+            "url": "http:\/\/api.vic.gov.au:443\/datavic\/v1.2\/datastore_search",
+            "description": "",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "resource_id",
+                    "description": "The ID of the resource that you want to retrieve\/query.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "filters",
+                    "description": "A dictionary containing the list of filters that you want to apply to the retrieved resource.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "fields",
+                    "description": "A list of fields to return from the resource.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "offset",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "limit",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "sort",
+                    "description": "Default: \"name asc\" string of field name and sort-order. The allowed fields are \u2018name\u2019 and \u2018packages\u2019",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "q",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "language",
+                    "description": "The language of the text query in the q parameter",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "plain",
+                    "description": "treat as plain text query (optional, default: true)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "db86cc34cb1957d1368838e491da9a93",
+            "rawModeData": ""
+        },
+        {
+            "id": "c596ddeefa7bc1d2d0cff6848751f6a0",
+            "name": "List of all parent data containers within the open data repository.",
+            "url": "http:\/\/api.vic.gov.au:443\/datavic\/v1.2\/package_list",
+            "description": "",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "offset",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "limit",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "db86cc34cb1957d1368838e491da9a93",
+            "rawModeData": ""
+        },
+        {
+            "id": "64e1304ccd0ee8c3e999981e66ee02ba",
+            "name": "Search functionality across all data containers within the open data repository.",
+            "url": "http:\/\/api.vic.gov.au:443\/datavic\/v1.2\/package_search",
+            "description": "",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "q",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "fq",
+                    "description": "any filter queries to apply. Note: +site_id:{ckan_site_id} is added to this string prior to the query being executed.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "sort",
+                    "description": "Default: \"name asc\" string of field name and sort-order. The allowed fields are \u2018name\u2019 and \u2018packages\u2019",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "rows",
+                    "description": "the number of matching rows to return. There is a hard limit of 1000 Packages per query.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "start",
+                    "description": "the offset in the complete result for where the set of returned Packages should begin.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "db86cc34cb1957d1368838e491da9a93",
+            "rawModeData": ""
+        },
+        {
+            "id": "2f83d568f9872bb7c1de2972cbb478b3",
+            "name": "List of all parent data containers within the open data repository and their nested resources.",
+            "url": "http:\/\/api.vic.gov.au:443\/datavic\/v1.2\/current_package_list_with_resources",
+            "description": "",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "offset",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "limit",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "db86cc34cb1957d1368838e491da9a93",
+            "rawModeData": ""
+        },
+        {
+            "id": "8f001153dd16c533c4d0390ee7882ed3",
+            "name": "Search functionality across all resources in the open data repository.",
+            "url": "http:\/\/api.vic.gov.au:443\/datavic\/v1.2\/resource_search",
+            "description": "",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "query",
+                    "description": "The \u2018query\u2019 parameter is a required field. It is a string of the form {field}:{term} or a list of strings, each of the same form. Within each string, {field} is a field or extra field on the Resource domain object.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "order_by",
+                    "description": "A field on the Resource model that orders the results.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "offset",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "limit",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "db86cc34cb1957d1368838e491da9a93",
+            "rawModeData": ""
+        },
+        {
+            "id": "94d691985bed6a26c0e1a19ed7004c3a",
+            "name": "Metadata about a specific organization that has contributed data to the open data repository",
+            "url": "http:\/\/api.vic.gov.au:443\/datavic\/v1.2\/organization_show",
+            "description": "",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "id",
+                    "description": "The ID of the Group that you wish to view.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "include_packages",
+                    "description": "Return Packages with the group, or just the group details.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "db86cc34cb1957d1368838e491da9a93",
+            "rawModeData": ""
+        },
+        {
+            "id": "b2db43f16ea0d1c6c046489e26b91b35",
+            "name": "List of all Organizations that have contributed data to the Open Data repository.",
+            "url": "http:\/\/api.vic.gov.au:443\/datavic\/v1.2\/organization_list",
+            "description": "",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "sort",
+                    "description": "Default: \"name asc\" string of field name and sort-order. The allowed fields are \u2018name\u2019 and \u2018packages\u2019",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "all_fields",
+                    "description": "return group dictionaries instead of just names. Only core fields are returned. Returning a list of Packages is too expensive, so the Packages property for each group is deprecated, but there is a count of the Packages in the Package_count property. (optional, values: true or blank). False will still return full sets, use blank for just names.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "db86cc34cb1957d1368838e491da9a93",
+            "rawModeData": ""
+        }
+    ]
+}

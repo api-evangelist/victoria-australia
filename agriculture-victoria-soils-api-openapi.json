@@ -1,0 +1,112 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "Agriculture Victoria Soils API",
+        "description": "The Agriculture Victoria Research Soils API provides access to a huge wealth of topsoil and subsoil properties data from across the state of Victoria.\n\n\n# Getting Started\nAPI responses include the following characteristics: soil type, soil texture, soil pH, soil carbon %, clay % and electricity conductivity.\n\nProvide WGS84 World Geodetic System `wgs84_east` and `wgs84_north` co-ordinates to retrieve the soil parameters relating to that location. \n\nSample value to retrieve the soil estimates are wgs84_east = 145.937310 and wgs84_north = -38.245853.\n\nAPI responses contain combined topsoil and subsoil property data from six depths relating to the corresponding area of collated research data.\n\n# Authentication and Authorisation\nCalls to the API are authenticated using API Key.  Please register at https:\/\/developer.vic.gov.au\/registration to obtain your own key from the key requests section.\n\n# Availability and Performance\nThe API is supported during business hours. No performance or availa",
+        "termsOfService": "http:\/\/exmple.com\/license\/"
+    },
+    "servers": [
+        "http:\/\/api.vic.gov.au:443\/avr\/soils-api\/v1.0"
+    ],
+    "paths": {
+        "\/estimates": {
+            "get": {
+                "summary": "Soil Parameter Estimates",
+                "description": "Soil Parameter Estimates\n",
+                "operationId": "GetEstimates",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "wgs84_east",
+                        "in": "query",
+                        "description": "WGS East Coordinate of the search request\n"
+                    },
+                    {
+                        "name": "wgs84_north",
+                        "in": "query",
+                        "description": "WGS North Coordinate of the search request\n"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK. Search results matching your criteria.\n",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/EstimateResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "MetaModel": {
+                "type": "object",
+                "properties": {
+                    "response_time": {
+                        "description": "The processing time for this record in human readable format.",
+                        "type": "string"
+                    },
+                    "response_time_ms": {
+                        "description": "The processing time for this record in milliseconds.",
+                        "type": "integer"
+                    },
+                    "count": {
+                        "description": "Number of records in the current page.",
+                        "type": "integer"
+                    }
+                }
+            },
+            "EstimateResponse": {
+                "type": "object",
+                "properties": {
+                    "MetaModel": {
+                        "description": "Meta object model",
+                        "type": "object"
+                    },
+                    "_meta": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "estimates": {
+                        "description": "",
+                        "type": "object"
+                    }
+                }
+            },
+            "estimates": {
+                "type": "object"
+            },
+            "SoilPropertiesResponse": {
+                "type": "object",
+                "properties": {
+                    "description": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "topsoil": {
+                        "description": "",
+                        "type": "number"
+                    },
+                    "topsoil_stddev": {
+                        "description": "",
+                        "type": "number"
+                    },
+                    "subsoil": {
+                        "description": "",
+                        "type": "number"
+                    },
+                    "subsoil_stddev": {
+                        "description": "",
+                        "type": "number"
+                    }
+                }
+            }
+        }
+    }
+}

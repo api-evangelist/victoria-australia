@@ -1,0 +1,258 @@
+{
+    "name": "Victoria Australia",
+    "description": "<p><span>Victoria is a state in southeast Australia. It encompasses mountains, national parks, wineries and surfing beaches. Melbourne, the state capital, has a warren of 19th-century &lsquo;laneways&rsquo;, and a central arts precinct. The Great Ocean Road follows the coast west to Port Campbell National Park, where the Twelve Apostles are limestone stacks on the edge of the ocean.<\/span><\/p>",
+    "image": "https:\/\/s3.amazonaws.com\/kinlane-productions\/api-evangelist-logos\/api-evangelist-red-seal.png",
+    "tags": [
+        "australia",
+        "have api",
+        "have swagger",
+        "state government"
+    ],
+    "created": "2019-12-17",
+    "modified": "2019-12-17",
+    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/victoria-australia\/master\/apis.json",
+    "specificationVersion": "0.14",
+    "apis": [
+        {
+            "name": "ABS Labour Force API",
+            "description": null,
+            "image": "https:\/\/s3.amazonaws.com\/kinlane-productions\/api-evangelist-logos\/api-evangelist-red-seal.png",
+            "humanURL": "https:\/\/www.vic.gov.au",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/abs-labour-force-api-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/abs-labour-force-api-postman-collection.json"
+                },
+                {
+                    "type": "x-documentation",
+                    "url": "https:\/\/developer.vic.gov.au\/index.php?option=com_apiportal&view=apitester&usage=api&tab=tests&apiName=ABS%20Labour%20Force%20API&apiId=6b20c293-4f91-4d2c-ad5f-3a0598990c2c&menuId=187"
+                }
+            ]
+        },
+        {
+            "name": "Agriculture Victoria Soils API",
+            "description": null,
+            "image": "https:\/\/s3.amazonaws.com\/kinlane-productions\/api-evangelist-logos\/api-evangelist-red-seal.png",
+            "humanURL": "https:\/\/www.vic.gov.au",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/agriculture-victoria-soils-api-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/agriculture-victoria-soils-api-postman-collection.json"
+                },
+                {
+                    "type": "x-documentation",
+                    "url": "https:\/\/developer.vic.gov.au\/index.php?option=com_apiportal&view=apitester&usage=api&tab=tests&apiName=Agriculture%20Victoria%20Soils%20API&apiId=208f8e40-aba4-4fd3-b61b-af461170cee9&menuId=187"
+                }
+            ]
+        },
+        {
+            "name": "DataVic CKAN API",
+            "description": null,
+            "image": "https:\/\/s3.amazonaws.com\/kinlane-productions\/api-evangelist-logos\/api-evangelist-red-seal.png",
+            "humanURL": "https:\/\/www.vic.gov.au",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/datavic-ckan-api-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/datavic-ckan-api-postman-collection.json"
+                },
+                {
+                    "type": "x-documentation",
+                    "url": "https:\/\/developer.vic.gov.au\/index.php?option=com_apiportal&view=apitester&usage=api&tab=tests&apiName=DataVic%20CKAN%20API&apiId=a2842043-2818-4961-b0ea-c99b2a178ee4&menuId=187"
+                }
+            ]
+        },
+        {
+            "name": "Datavic Open Data API",
+            "description": null,
+            "image": "https:\/\/s3.amazonaws.com\/kinlane-productions\/api-evangelist-logos\/api-evangelist-red-seal.png",
+            "humanURL": "https:\/\/www.vic.gov.au",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/datavic-open-data-api-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/datavic-open-data-api-postman-collection.json"
+                },
+                {
+                    "type": "x-documentation",
+                    "url": "https:\/\/developer.vic.gov.au\/index.php?option=com_apiportal&view=apitester&usage=api&tab=tests&apiName=Datavic%20Open%20Data%20API&apiId=e78027c6-4402-4049-b030-89b05daa624a&menuId=187"
+                }
+            ]
+        },
+        {
+            "name": "EPA AirWatch API",
+            "description": null,
+            "image": "https:\/\/s3.amazonaws.com\/kinlane-productions\/api-evangelist-logos\/api-evangelist-red-seal.png",
+            "humanURL": "https:\/\/www.vic.gov.au",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/epa-airwatch-api-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/epa-airwatch-api-postman-collection.json"
+                },
+                {
+                    "type": "x-documentation",
+                    "url": "https:\/\/developer.vic.gov.au\/index.php?option=com_apiportal&view=apitester&usage=api&tab=tests&apiName=EPA%20AirWatch%20API&apiId=a201aa7e-ab49-40a2-9436-4bf7210b4cfb&menuId=187"
+                }
+            ]
+        },
+        {
+            "name": "Important Government Dates API",
+            "description": null,
+            "image": "https:\/\/s3.amazonaws.com\/kinlane-productions\/api-evangelist-logos\/api-evangelist-red-seal.png",
+            "humanURL": "https:\/\/www.vic.gov.au",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/important-government-dates-api-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/important-government-dates-api-postman-collection.json"
+                },
+                {
+                    "type": "x-documentation",
+                    "url": "https:\/\/developer.vic.gov.au\/index.php?option=com_apiportal&view=apitester&usage=api&tab=tests&apiName=Important%20Government%20Dates%20API&apiId=838b68da-1ff1-4b13-aa35-8683640b4008&menuId=187"
+                }
+            ]
+        },
+        {
+            "name": "Museums Victoria Collections API",
+            "description": null,
+            "image": "https:\/\/s3.amazonaws.com\/kinlane-productions\/api-evangelist-logos\/api-evangelist-red-seal.png",
+            "humanURL": "https:\/\/www.vic.gov.au",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/museums-victoria-collections-api-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/museums-victoria-collections-api-postman-collection.json"
+                },
+                {
+                    "type": "x-documentation",
+                    "url": "https:\/\/developer.vic.gov.au\/index.php?option=com_apiportal&view=apitester&usage=api&tab=tests&apiName=Museums%20Victoria%20Collections%20API&apiId=8f85b08e-ffd7-45ba-b3f5-c333726ac339&menuId=187"
+                }
+            ]
+        },
+        {
+            "name": "Popular Baby Names Victoria API",
+            "description": null,
+            "image": "https:\/\/s3.amazonaws.com\/kinlane-productions\/api-evangelist-logos\/api-evangelist-red-seal.png",
+            "humanURL": "https:\/\/www.vic.gov.au",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/popular-baby-names-victoria-api-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/popular-baby-names-victoria-api-postman-collection.json"
+                },
+                {
+                    "type": "x-documentation",
+                    "url": "https:\/\/developer.vic.gov.au\/index.php?option=com_apiportal&view=apitester&usage=api&tab=tests&apiName=Popular%20Baby%20Names%20Victoria%20API&apiId=14350cf6-2e07-4f48-b4bd-973f99f6aa54&menuId=187"
+                }
+            ]
+        },
+        {
+            "name": "Victorian Heritage API",
+            "description": null,
+            "image": "https:\/\/s3.amazonaws.com\/kinlane-productions\/api-evangelist-logos\/api-evangelist-red-seal.png",
+            "humanURL": "https:\/\/www.vic.gov.au",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/victorian-heritage-api-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/victorian-heritage-api-postman-collection.json"
+                },
+                {
+                    "type": "x-documentation",
+                    "url": "https:\/\/developer.vic.gov.au\/index.php?option=com_apiportal&view=apitester&usage=api&tab=tests&apiName=Victorian%20Heritage%20API&apiId=36d97216-53b6-4a5c-8754-8b44b26a5e21&menuId=187"
+                }
+            ]
+        }
+    ],
+    "include": [],
+    "x-common": [
+        {
+            "type": "Developer",
+            "url": "https:\/\/developer.vic.gov.au"
+        },
+        {
+            "type": "Documentation",
+            "url": "https:\/\/developer.vic.gov.au\/api-catalogue"
+        },
+        {
+            "type": "Website",
+            "url": "https:\/\/www.vic.gov.au"
+        },
+        {
+            "type": "About",
+            "url": "https:\/\/developer.vic.gov.au\/about"
+        },
+        {
+            "type": "Accessibility",
+            "url": "https:\/\/developer.vic.gov.au\/accessibility"
+        },
+        {
+            "type": "Contact Form",
+            "url": "https:\/\/developer.vic.gov.au\/contact"
+        },
+        {
+            "type": "Login",
+            "url": "https:\/\/developer.vic.gov.au\/sign-in"
+        },
+        {
+            "type": "Privacy",
+            "url": "https:\/\/developer.vic.gov.au\/privacy"
+        },
+        {
+            "type": "Self-Service Registration",
+            "url": "https:\/\/developer.vic.gov.au\/registration"
+        },
+        {
+            "type": "Terms of Service",
+            "url": "https:\/\/developer.vic.gov.au\/terms"
+        }
+    ]
+}

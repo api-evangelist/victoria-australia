@@ -1,0 +1,184 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "Popular Baby Names Victoria API",
+        "description": "Births, Deaths and Marriages showcases the increasing diversity and variety of names and naming traditions in Victoria with its top 100 most popular baby names API.  \n\n# Getting Started\nThe data consists of a ranked list of the top 100 male and female baby names with frequency counts for every year since 2008. You can use four different filters to interrogate the dataset. Searching without specifying the year will search all years. Responses are sorted by position then year.\n\n## name\nUse to retieve only specific names or variations of name.\n\nexample: `oli*` retrieves `Oliver`, `Olivia` \n\n## sex\nRetrieves the names by sex.\n\nexample: `MALE` or `FEMALE`\n\n## year\nFilter by year by entering any single year from `2008` to `previous year`. If not specified, data for all years will be returned.\n\nexample: `2018`\n\n## position\nFilter by the ranked position.\n\nexample: `1`\n\n\n# Authentication and Authorisation\nCalls to this API require an API Key. A sample API key is provided for testing via the Dev",
+        "termsOfService": "http:\/\/exmple.com\/license\/"
+    },
+    "servers": [
+        "http:\/\/api.vic.gov.au:443\/bdm\/names\/v1.0"
+    ],
+    "paths": {
+        "\/popular-baby-names": {
+            "get": {
+                "summary": "Top 100 popular baby names",
+                "description": "Top 100 most popular baby names in the State of Victoria",
+                "operationId": "GET\/popularBabyNames",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "Baby name. Examples: `oliver`, `oli*`, etc.\n"
+                    },
+                    {
+                        "name": "sex",
+                        "in": "query",
+                        "description": "Sex of the baby. Available values `MALE` and `FEMALE`\n"
+                    },
+                    {
+                        "name": "year",
+                        "in": "query",
+                        "description": "Filter by year by entering any single year from `2008` to `previous year`. If not specified, data for all years will be returned.\n"
+                    },
+                    {
+                        "name": "position",
+                        "in": "query",
+                        "description": "Filter by the ranked position. Minimum is `1` and Maximum is `100`\n"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "The page number requested, starting from 1. Default is `1`\n"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "The number of records displayed per page. Default is `100`\n"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/popularBabyNamesResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "linkModel": {
+                "type": "object",
+                "properties": {
+                    "href": {
+                        "description": "The URL to the referenced resource",
+                        "type": "string"
+                    },
+                    "rel": {
+                        "description": "The description of the relationship between the resources",
+                        "type": "string"
+                    }
+                }
+            },
+            "popularBabyName": {
+                "type": "object",
+                "properties": {
+                    "position": {
+                        "description": "",
+                        "type": "integer"
+                    },
+                    "name": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "sex": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "count": {
+                        "description": "",
+                        "type": "integer"
+                    },
+                    "year": {
+                        "description": "",
+                        "type": "integer"
+                    }
+                }
+            },
+            "metaModel": {
+                "type": "object",
+                "properties": {
+                    "response_time": {
+                        "description": "The response time for this request in human readable format.",
+                        "type": "string"
+                    },
+                    "response_time_ms": {
+                        "description": "The response time for this request in milliseconds.",
+                        "type": "integer"
+                    },
+                    "total_records": {
+                        "description": "Total number of the results which meets the search criteria regardless of the page and limit.",
+                        "type": "integer"
+                    },
+                    "page": {
+                        "description": "The current page for this collection request.",
+                        "type": "integer"
+                    },
+                    "limit": {
+                        "description": "The number of records per page.",
+                        "type": "integer"
+                    },
+                    "count": {
+                        "description": "",
+                        "type": "integer"
+                    }
+                }
+            },
+            "linksModel": {
+                "type": "array"
+            },
+            "errorModel": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Identifier of the specific error.",
+                        "type": "string"
+                    },
+                    "message": {
+                        "description": "An application-specific error message.",
+                        "type": "string"
+                    },
+                    "errorDetail": {
+                        "description": "A human-readable explanation specific to this occurrence of the problem.",
+                        "type": "string"
+                    }
+                }
+            },
+            "popularBabyNamesResponse": {
+                "type": "object",
+                "properties": {
+                    "metaModel": {
+                        "description": "Meta object model",
+                        "type": "object"
+                    },
+                    "_meta": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "_links": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "popular-baby-names": {
+                        "description": "",
+                        "type": "array"
+                    }
+                }
+            },
+            "_links": {
+                "type": "object"
+            },
+            "popular-baby-names": {
+                "type": "array"
+            }
+        }
+    }
+}

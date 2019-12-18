@@ -1,0 +1,245 @@
+{
+    "id": "dbb8581be752a53176f937008412b011",
+    "name": "Datavic Open Data API",
+    "description": null,
+    "auth": null,
+    "events": null,
+    "variables": [],
+    "order": [],
+    "folders_order": [],
+    "folders": [],
+    "requests": [
+        {
+            "id": "522e6c6f6f3f7bb721007cd87864824a",
+            "name": "Display of a single data container within the open data repository.",
+            "url": "http:\/\/api.vic.gov.au:443\/datavic\/opendata\/v1.1\/datasets\/{id}",
+            "description": "Display of a single data container within the open data repository.\n",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "id",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "dbb8581be752a53176f937008412b011",
+            "rawModeData": ""
+        },
+        {
+            "id": "3bf9f43f8c54f47402e88b6381a0d976",
+            "name": "Retreive single organisation.",
+            "url": "http:\/\/api.vic.gov.au:443\/datavic\/opendata\/v1.1\/organisations\/{id}",
+            "description": "Retreive single organisation within the open data repository.\n",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "id",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "dbb8581be752a53176f937008412b011",
+            "rawModeData": ""
+        },
+        {
+            "id": "ad7787d8bd6bfc9ab7683b5ea51fe66d",
+            "name": "List of all parent data containers within the open data repository.",
+            "url": "http:\/\/api.vic.gov.au:443\/datavic\/opendata\/v1.1\/datasets",
+            "description": "List of all parent data containers within the open data repository.\n",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "page",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "limit",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "filter",
+                    "description": "comma seperated {key:value} format to specify fields and values to be used for querying the data. This is ageneric search criterion.\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "tagSearch",
+                    "description": "to return datasets with specified tag\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "keywordSearch",
+                    "description": "to return datasets containing the keyword in any level\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "dbb8581be752a53176f937008412b011",
+            "rawModeData": ""
+        },
+        {
+            "id": "3018b027ba41b3d2badef3b487ddbf7a",
+            "name": "List all Resources available in the Open Data Repository.",
+            "url": "http:\/\/api.vic.gov.au:443\/datavic\/opendata\/v1.1\/resources",
+            "description": "List all Resources available in the Open Data Repository. At least one non-paginationatio query parameter should be propvided- at least one query parameter should be present.\n",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "format",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "name",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "url",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "resourceType",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "mimeType",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "order_by",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "page",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "limit",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "dbb8581be752a53176f937008412b011",
+            "rawModeData": ""
+        },
+        {
+            "id": "c4fac1be2ebd9d8d5e20d4d091017c1c",
+            "name": "List Organisations contributed data to Open Data Repository.",
+            "url": "http:\/\/api.vic.gov.au:443\/datavic\/opendata\/v1.1\/organisations",
+            "description": "List Organisations contributed data to Open Data Repository.\n",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "sort",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "dbb8581be752a53176f937008412b011",
+            "rawModeData": ""
+        }
+    ]
+}

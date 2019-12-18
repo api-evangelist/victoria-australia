@@ -1,0 +1,100 @@
+{
+    "id": "764c0421492efc440e797a4f66ec49e7",
+    "name": "ABS Labour Force API",
+    "description": null,
+    "auth": null,
+    "events": null,
+    "variables": [],
+    "order": [],
+    "folders_order": [],
+    "folders": [],
+    "requests": [
+        {
+            "id": "7cfb228d8fa265d136116bc16ac80b3c",
+            "name": "ABS Statistics datasets for Labour Force",
+            "url": "http:\/\/api.vic.gov.au:443\/abs\/v1.0\/labour-force-statistics",
+            "description": "ABS Statistics datasets for Labour Force",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "region",
+                    "description": "Provide a valid region *enum* value. See documentation for available *enums*",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "data_item",
+                    "description": "Provide a valid data_item *enum* value. See documentation for available *enums*",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "age",
+                    "description": "Provide a valid age *enum* value. See documentation for available *enums*",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "sex",
+                    "description": "If empty, returns data for all values. Provide a valid sex *enum* value. See documentation for available *enums*",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "adjustment_type",
+                    "description": "If empty, returns data for all values. Provide a valid adjustment_type *enum* value. See documentation for available *enums*",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "start_period",
+                    "description": "Observation Start Period. The statistical data for Labour Force is available from the period of `Feb 1978`\n\n__Format:__\n`YYYY-MM`\n\n__Some valid Eamples:__\n  `1978-02`\n  `2019-01`\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "end_period",
+                    "description": "Observation End Period. The statistical data for Labour Force is available until the `previous month`\n\n__Format:__\n`YYYY-MM`\n\n__Some valid Eamples:__\n  `1978-02`\n  `2019-08`\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "page",
+                    "description": "The page number requested, starting from 1. Default to 1.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "limit",
+                    "description": "The number of records displayed per page. Default to 1000.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "764c0421492efc440e797a4f66ec49e7",
+            "rawModeData": ""
+        }
+    ]
+}

@@ -1,0 +1,109 @@
+{
+    "id": "477668783085b82d32f8c952b7ed9517",
+    "name": "Important Government Dates API",
+    "description": null,
+    "auth": null,
+    "events": null,
+    "variables": [],
+    "order": [],
+    "folders_order": [],
+    "folders": [],
+    "requests": [
+        {
+            "id": "fe123ac1b888be5294cf147707b4440d",
+            "name": "Get a list of dates.",
+            "url": "http:\/\/api.vic.gov.au:443\/vicgov\/v1.0\/dates",
+            "description": "Note that pagination is enabled by default for performance reasons.  The default limit value is 50 records per page.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "type",
+                    "description": "Type of date.  Possible values are: \n\n- PUBLIC_HOLIDAY\n- DAYLIGHT_SAVING\n- SCHOOL_TERM\n- SCHOOL_HOLIDAY\n- FLAG_NOTIFICATION\n- PARLIAMENT_SITTING\n- MULTI_FAITH\n\nYou can combine multiple date types together as part of your search, for e.g. type=PUBLIC_HOLIDAY,SCHOOL_HOLIDAY. \n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "from_date",
+                    "description": "Start date to search from (including the date).  **TIP:** If the from_date and tod_date values are the same, this will return results for that particular date.  Dates are formatted according to ISO 8601 as \"yyyy-MM-dd\"\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "to_date",
+                    "description": "End date to search to (including the date), including this date. **WARNING:** The to_date value must not be a date that occurs before the from_date.  Dates are formatted according to ISO 8601 as \"yyyy-MM-dd\"\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "format",
+                    "description": "Option to specify the output format. If no format is specified, the default is to return a json payload.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "page",
+                    "description": "The page number requested, starting from 1.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "limit",
+                    "description": "The number of records displayed per page.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "sort",
+                    "description": "Sort the results in ascending or descending order. The available sort indexes are: \n  - `uuid` - Sort by uuid in ascending or descending order\n    - e.g. `sort=uuid:asc` or `sort=uuid:desc`\n  - `date` - Sort by date in ascending or descending order\n    - e.g. `sort=date:asc` or `sort=date:desc`\n  - `type` - Sort by date type in ascending or descending order, \n    - e.g. `sort=type:asc` or `sort=type:desc`\n\nYou can also combine multiple sort parameters, for e.g `sort=date:asc,type:asc`\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "477668783085b82d32f8c952b7ed9517",
+            "rawModeData": ""
+        },
+        {
+            "id": "fabb70bc9d577af997a6adb149730115",
+            "name": "Create a date.",
+            "url": "http:\/\/api.vic.gov.au:443\/vicgov\/v1.0\/dates",
+            "description": "This method is for internal data adminstrators only.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "477668783085b82d32f8c952b7ed9517",
+            "rawModeData": ""
+        }
+    ]
+}

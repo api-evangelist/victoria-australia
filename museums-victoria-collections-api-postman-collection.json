@@ -1,0 +1,470 @@
+{
+    "id": "1640ff7e7ca1f4f575e01ba3afd28446",
+    "name": "Museums Victoria Collections API",
+    "description": null,
+    "auth": null,
+    "events": null,
+    "variables": [],
+    "order": [],
+    "folders_order": [],
+    "folders": [],
+    "requests": [
+        {
+            "id": "380ddf87ff06e00d54deb0cb5605d970",
+            "name": "Returns a list of items.",
+            "url": "http:\/\/api.vic.gov.au:443\/museumvictoria\/v1.0\/collections\/items",
+            "description": "",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "1640ff7e7ca1f4f575e01ba3afd28446",
+            "rawModeData": ""
+        },
+        {
+            "id": "e9f9da2ce60cf5e8944f0c346abbc943",
+            "name": "Returns a bunch of specimens.",
+            "url": "http:\/\/api.vic.gov.au:443\/museumvictoria\/v1.0\/collections\/specimens",
+            "description": "",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "1640ff7e7ca1f4f575e01ba3afd28446",
+            "rawModeData": ""
+        },
+        {
+            "id": "1bb28cb19de1bc42438eff375adee123",
+            "name": "Returns a single article by ID.",
+            "url": "http:\/\/api.vic.gov.au:443\/museumvictoria\/v1.0\/collections\/articles\/{articleId}",
+            "description": "",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "articleId",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "1640ff7e7ca1f4f575e01ba3afd28446",
+            "rawModeData": ""
+        },
+        {
+            "id": "fe5663045e85f771c637af7a2f9fc51e",
+            "name": "Returns a single specimen by Id.",
+            "url": "http:\/\/api.vic.gov.au:443\/museumvictoria\/v1.0\/collections\/specimens\/{specimenId}",
+            "description": "",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "specimenId",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "1640ff7e7ca1f4f575e01ba3afd28446",
+            "rawModeData": ""
+        },
+        {
+            "id": "395ad49590e702f2f9cb92fb4e83dfa4",
+            "name": "Returns a single item by ID.",
+            "url": "http:\/\/api.vic.gov.au:443\/museumvictoria\/v1.0\/collections\/items\/{itemId}",
+            "description": "",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "itemId",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "1640ff7e7ca1f4f575e01ba3afd28446",
+            "rawModeData": ""
+        },
+        {
+            "id": "a55a51f5070b1c4909b1cc8dcb540fc7",
+            "name": "Returns a single species by Id.",
+            "url": "http:\/\/api.vic.gov.au:443\/museumvictoria\/v1.0\/collections\/species\/{speciesId}",
+            "description": "",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "speciesId",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "1640ff7e7ca1f4f575e01ba3afd28446",
+            "rawModeData": ""
+        },
+        {
+            "id": "8f968d8b7ee9b3a30f48debda4f3d9bf",
+            "name": "Searches through the collection",
+            "url": "http:\/\/api.vic.gov.au:443\/museumvictoria\/v1.0\/collections\/search",
+            "description": "",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "query",
+                    "description": "Specify a search term. Can contain one or more values. In order to add more terms repeat the query parameter as follows \"query=coin&amp;query=india\"\n\n**Example values:**\n- coin\n- india\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "sort",
+                    "description": "The order in which to sort return results. Regardless of the value used the direction of the order is always descending. Default value is relevance if the query parameter is present, otherwise quality is used as the default value.\n\n**Valid values:**\n- quality - The quality of the record based on how many fields and images a record may have.\n- relevance - The relevance of the record based on the search query. Only valid if the query parameter is used.\n- date - The date the record was last modifie",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "mindatemodified",
+                    "description": "Minimum date a record was modified in ISO 8601 UTC format. Records with a modified date greater than or equal to this value will be returned.\n\n**Example:**\n- 2014-06-21T12:00:00Z\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "maxdatemodified",
+                    "description": "Maximum date a record was modified in ISO 8601 UTC format. Records with a modified date less than or equal to this value will be returned.\n\n**Example:**\n- 2014-06-21T12:00:00Z\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "hasimages",
+                    "description": "Specify whether or not the returned records contain images. Parameter is considered a facet.\n\n**Valid values:**\n- yes\n- no\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "ondisplay",
+                    "description": "Specify whether or not the returned records are on display. Parameter is considered a facet.\n\n**Valid values:**\n- yes\n- no\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "recordtype",
+                    "description": "Type of record to return. Parameter is considered a facet.\n\n**Example values:**\n- article\n- item\n- species\n- specimen\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "category",
+                    "description": "Collection category of a record. Parameter is considered a facet.\n\n**Example values:**\n- natural sciences\n- indigenous collections\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "collectingarea",
+                    "description": "Collecting area of a record. Can contain one or more values. In order to add more terms repeat the query parameter as follows \"collectingarea=ornithology&amp;collectingarea=mammalogy\". Parameter is considered a facet.\n\n**Example values:**\n- ornithology\n- mammalogy\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "specimenscientificgroup",
+                    "description": "Specimen scientific group of a record, will only return specimen records. Parameter is considered a facet.\n\n**Example values:**\n- geology\n- invertebrate zoology\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "itemtype",
+                    "description": "The general type of specimen or item, will only return specimen or item records. Parameter is considered a facet.\n\n**Example values:**\n- object\n- specimen\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "speciestype",
+                    "description": "The broad category a species may be considered to belong to, will only return species records. Parameter is considered a facet.\n\n**Example values:**\n- snakes\n- birds\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "imagelicence",
+                    "description": "The open access licences that are attributed to a records images. Can contain one or more values. In order to add more terms repeat the query parameter as follows \"imagelicence=public+domain&amp;imagelicence=cc+by\". Parameter is considered a facet.\n\n**Example values:**\n- public domain\n- cc by\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "articletype",
+                    "description": "The type of article, will only return article records. Can contain one or more values. In order to add more terms repeat the query parameter as follows \"articletype=party&amp;articletype=physical+object\". Parameter is considered a facet.\n\n**Example values:**\n- party\n- physical object\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "displaylocation",
+                    "description": "The display location at Museums Victoria venues for the record, will only return item or specimen records. Parameter is considered a facet.\n\n**Example values:**\n- melbourne museum\n- scienceworks\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "keyword",
+                    "description": "The keywords generally used to describe the record, sorta like tags. Keywords can come from a variety of other fields on records, for example:\n\n**articles:**\n- keywords\n\n**items:**\n- keywords\n- audioVisualRecordingDetails\n- modelNames\n- archeologyActivity\n- archeologySpecificActivity\n- archeologyDecoration\n- numismaticsSeries\n- tradeLiteraturePrimarySubject\n- tradeLiteraturePublicationTypes\n- brands\n\n**species:**\n- conservationStatuses\n- animalSubType\n\n**specimens:**\n- keywords\n- expeditionNameE",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "locality",
+                    "description": "The general locality a record may be associated with. Locality can come from a variety of other fields on records , for example:\n\n**articles:**\n- localities\n\n**items:**\n- locality\n- region\n- state\n- country\n- indigenousCulturesLocalities\n\n**species:**\n- nationalParks\n\n**specimens:**\n- locality\n- region\n- state\n- country\n- ocean\n- continent\n- district\n- town\n- nearestNamedPlace\n- tektitesLocalStrewnfield\n- tektitesGlobalStrewnfield\n\n**Example Values:**\n- barossa valley\n- germany\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "collection",
+                    "description": "The museum collection a record belongs to, will only return item or specimen records. Collection can come from a variety of other fields on records, for example:\n\n**items:**\n- collectionNames\n- discipline\n\n**specimens:**\n- collectionNames\n- discipline\n\n**Example Values:**\n- spencer collection\n- royal exhibition building collection\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "date",
+                    "description": "The general date a record may be associated with, due to the variation in the way date is cataloged the string must be an exact match and is not parsed into a standardised date format, will only return item or specimen records. Collection can come from a variety of other fields on records, for example:\n\n**items:**\n- date\n- indigenousCulturesDate\n- indigenousCulturesDateCollected\n- archeologyManufactureDate\n- philatelyDateIssued\n- tradeLiteraturePublicationDate\n\n**specimens:**\n- date\n\n**Example V",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "culturalgroup",
+                    "description": "The indigenous cultures cultural group a record may be associated with, will only return item records.\n\n**Example Values:**\n- woi wurrung\n- barapa barapa\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "classification",
+                    "description": "The museum classification a record may belong to, will only return item and specimen records.\n\n**Example Values:**\n- boring apparatus\n- dust collecting equipment\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "name",
+                    "description": "A person or companies name a record may be associated with. Name can come from a variety of other fields on records, for example:\n\n**articles:**\n- author.fullName\n\n**items:**\n- association.name\n- indigenousCulturesPhotographer\n- indigenousCulturesAuthor\n- indigenousCulturesIllustrator\n- indigenousCulturesMaker\n- indigenousCulturesCollector\n- indigenousCulturesLetterTo\n- indigenousCulturesLetterFrom\n- brand.name\n- archeologyManufactureName\n- tradeLiteraturePrimaryName\n- artworkPublisher\n\n**specie",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "technique",
+                    "description": "The archeology technique used to create an object, will only return item records.\n\n**Example Values:**\n- caved bone\n- machine-made\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "denomination",
+                    "description": "The numismatics denomination of a record, will only return item records.\n\n**Example Values:**\n- half crown\n- obol\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "habitat",
+                    "description": "The habitat or whereToLook a species lives in, will only return species records.\n\n**Example Values:**\n- woodland\n- seagrass meadows\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "taxon",
+                    "description": "The taxonName, kingdom, phylum, subphylum, superclass, class, subclass, superorder, order, suborder, infraorder, superfamily, family, subfamily, commonName, otherCommonNames an item, species or specimen may belong to.\n\n**Example Values:**\n- mammalia\n- Ornithorhynchus anatinus\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "typestatus",
+                    "description": "The type status of a specimen, will only return specimen records.\n\n**Example Values:**\n- holotype\n- paratype\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "geotype",
+                    "description": "The petrologyRockClass, petrologyRockGroup, mineralogyVariety, mineralogyGroup, mineralogyClass, meteoritesClass, meteoritesGroup, tektitesClassification, mineralogySpecies a specimen may belong to.\n\n**Example Values:**\n- agate\n- copper\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "museumlocation",
+                    "description": "The gallery or venue a record may be on display at one of Museums Victoria's venues, will only return item and specimen records.\n\n**Example Values:**\n- immigration museum\n- bunjilaka - first peoples\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "article",
+                    "description": "The title of an article a record may be associated with, will only return article, item and specimen records.\n\n**Example Values:**\n- arms collection\n- csirac games - a summary\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "speciesendemicity",
+                    "description": "The endemicity of a species, will only return species records.\n\n**Example Values:**\n- introduced pest\n- native to australia\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "1640ff7e7ca1f4f575e01ba3afd28446",
+            "rawModeData": ""
+        },
+        {
+            "id": "0d712b28b7017860341c4985ded83071",
+            "name": "Returns a list of species.",
+            "url": "http:\/\/api.vic.gov.au:443\/museumvictoria\/v1.0\/collections\/species",
+            "description": "",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "1640ff7e7ca1f4f575e01ba3afd28446",
+            "rawModeData": ""
+        },
+        {
+            "id": "a30cbc33b0ef5d5ee050b6de2aa15c73",
+            "name": "Returns a list of articles.",
+            "url": "http:\/\/api.vic.gov.au:443\/museumvictoria\/v1.0\/collections\/articles",
+            "description": "",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "1640ff7e7ca1f4f575e01ba3afd28446",
+            "rawModeData": ""
+        }
+    ]
+}

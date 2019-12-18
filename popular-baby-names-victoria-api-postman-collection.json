@@ -1,0 +1,79 @@
+{
+    "id": "1b24d630f5fc2e35eaed27544c9fff7d",
+    "name": "Popular Baby Names Victoria API",
+    "description": null,
+    "auth": null,
+    "events": null,
+    "variables": [],
+    "order": [],
+    "folders_order": [],
+    "folders": [],
+    "requests": [
+        {
+            "id": "a01428dd3f46b831bedf248b02ae9ef1",
+            "name": "Top 100 popular baby names",
+            "url": "http:\/\/api.vic.gov.au:443\/bdm\/names\/v1.0\/popular-baby-names",
+            "description": "Top 100 most popular baby names in the State of Victoria",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "name",
+                    "description": "Baby name. Examples: `oliver`, `oli*`, etc.\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "sex",
+                    "description": "Sex of the baby. Available values `MALE` and `FEMALE`\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "year",
+                    "description": "Filter by year by entering any single year from `2008` to `previous year`. If not specified, data for all years will be returned.\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "position",
+                    "description": "Filter by the ranked position. Minimum is `1` and Maximum is `100`\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "page",
+                    "description": "The page number requested, starting from 1. Default is `1`\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "limit",
+                    "description": "The number of records displayed per page. Default is `100`\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "1b24d630f5fc2e35eaed27544c9fff7d",
+            "rawModeData": ""
+        }
+    ]
+}

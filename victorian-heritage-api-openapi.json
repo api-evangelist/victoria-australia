@@ -1,0 +1,1534 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "Victorian Heritage API",
+        "description": "The Victorian Heritage Database (VHD) is home to the Victorian Heritage Register which lists the State's most significant heritage places, objects and historic shipwrecks protected under the Heritage Act 2017. It's also home to the Victorian Heritage Inventory which lists all known historical archaeological sites in Victoria.\n\nThe VHD API is a read only RESTful API accepting only GET requests and returning only HAL formatted JSON responses. \n\n## Getting Started\n\nAccess to the API requires an API Key.\n\nOnce you have obtained the API Key, try submitting the following API requests:\n\nGet a list of places:\n\n- https:\/\/api.vic.gov.au\/vhd\/v1\/places\n\nGet a list of shipwrecks:\n\n- https:\/\/api.vic.gov.au\/vhd\/v1\/shipwrecks\n\n## Authentication & Authorisation\nCalls to the API are authenticated using a unique API Key.  Please register at https:\/\/developer.vic.gov.au to obtain your own key.\n\n## Availability and Performance\nThe API is highly available with a target uptime of 99.95%. Target performance m",
+        "termsOfService": "http:\/\/exmple.com\/license\/"
+    },
+    "servers": [
+        "http:\/\/api.vic.gov.au:443\/vhd\/1.0"
+    ],
+    "paths": {
+        "\/places\/{places_id}": {
+            "get": {
+                "summary": "Fetch all information relating to a specific place. Requires a place id number.",
+                "description": "",
+                "operationId": "GetPlaceByID",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "places_id",
+                        "in": "path",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/vnd.vhd.v1+json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/PlaceItemResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/places-collection": {
+            "get": {
+                "summary": "Fetch a collection of places  e.g: \/places-collection?col[]=1&col[]=2&col[]=3.",
+                "description": "",
+                "operationId": "GetCollectionofPlacesByID",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "col",
+                        "in": "query",
+                        "description": "Get a collection of places\n\n**Example:**\n- `\/places-collection?col=1&col=2&col=3.`\n"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/vnd.vhd.v1+json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/PlaceItemResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/categories\/{categories_id}": {
+            "get": {
+                "summary": "Retrieve a list of sub categories for a given category.",
+                "description": "",
+                "operationId": "GetCategoriesByID",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "categories_id",
+                        "in": "path",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/vnd.vhd.v1+json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/PlaceItemResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/autocomplete": {
+            "get": {
+                "summary": "Use the kw parameter to retrieve an array of suggested words. e.g: \/autocomplete?kw=foo",
+                "description": "",
+                "operationId": "GetAutocomplete",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "kw",
+                        "in": "query",
+                        "description": "Keyword search\n\n**Example:**\n- `\/autocomplete?kw=ag`\n"
+                    },
+                    {
+                        "name": "dic",
+                        "in": "query",
+                        "description": "???\n\n**Example:**\n- `\/autocomplete?dic=??`\n"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/vnd.vhd.v1+json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/PlaceItemResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/shipwrecks\/{shipwrecks_id}": {
+            "get": {
+                "summary": "Fetch all information for a specific shipwreck.",
+                "description": "",
+                "operationId": "GetShipwreckByID",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "shipwrecks_id",
+                        "in": "path",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/vnd.vhd.v1+json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/PlaceItemResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/recommended-tours": {
+            "get": {
+                "summary": "Access this endpoint to retrieve the full paginated list of recommended tours.",
+                "description": "",
+                "operationId": "GetRecommendedTours",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/vnd.vhd.v1+json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/PlaceItemResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/shipwrecks-collection": {
+            "get": {
+                "summary": "Retrieve a collection of shipwrecks.",
+                "description": "",
+                "operationId": "GetCollectionofShipwrecksByID",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "col",
+                        "in": "query",
+                        "description": "Get a collection of places\n\n**Example:**\n- `\/places-collection?col=1&col=2&col=3.`\n"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/vnd.vhd.v1+json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/PlaceItemResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/categories": {
+            "get": {
+                "summary": "Retrieve a list of categories",
+                "description": "",
+                "operationId": "GetCategories",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/vnd.vhd.v1+json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/PlaceItemResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/ship-periods-built": {
+            "get": {
+                "summary": "Get the list of available 5 year periods for year built.",
+                "description": "",
+                "operationId": "GetShipPeriodsBuilt",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/vnd.vhd.v1+json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/PlaceItemResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/recommended-tours\/{recommended_tours_id}": {
+            "get": {
+                "summary": "Access this endpoint with a Tour ID to retrieve the full information about a specific tour.",
+                "description": "",
+                "operationId": "GetRecommendedToursByID",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "recommended_tours_id",
+                        "in": "path",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/vnd.vhd.v1+json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/PlaceItemResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/ship-propulsions": {
+            "get": {
+                "summary": "Get the complete list of ship propulsion types",
+                "description": "",
+                "operationId": "GetShipPropulsions",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/vnd.vhd.v1+json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/PlaceItemResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/themes": {
+            "get": {
+                "summary": "Get the list of available primary themes.",
+                "description": "",
+                "operationId": "GetThemes",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/vnd.vhd.v1+json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/PlaceItemResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/heritage-authorities": {
+            "get": {
+                "summary": "Get the complete list of Heritage Authorities, to fetch only those Heritage Authorities that have records pass in the 'hasListings' parameter with a trueish value. (\/heritage-authorities?hasListings=true)",
+                "description": "",
+                "operationId": "GetHeritageAuthorities",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/vnd.vhd.v1+json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/PlaceItemResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/periods": {
+            "get": {
+                "summary": "Get the list of available 5 year periods",
+                "description": "",
+                "operationId": "GetPeriods",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/vnd.vhd.v1+json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/PlaceItemResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/ship-construction-materials": {
+            "get": {
+                "summary": "Get the full list of available construction materials.",
+                "description": "",
+                "operationId": "GetShipConstructionMaterials",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/vnd.vhd.v1+json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/PlaceItemResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/heritage-act-categories": {
+            "get": {
+                "summary": "Get the complete list of heritage act categories",
+                "description": "",
+                "operationId": "GetHeritageActCategories",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/vnd.vhd.v1+json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/PlaceItemResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/ship-primary-uses": {
+            "get": {
+                "summary": "Get the list of primary uses for shipwrecks",
+                "description": "",
+                "operationId": "GetShipPrimaryUses",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/vnd.vhd.v1+json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/PlaceItemResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/architects": {
+            "get": {
+                "summary": "Get the list of available architects",
+                "description": "",
+                "operationId": "GetArchitects",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/vnd.vhd.v1+json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/PlaceItemResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/shipwrecks": {
+            "get": {
+                "summary": "Fetch the paginated list of shipwrecks.",
+                "description": "",
+                "operationId": "GetShipwrecks",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "rpp",
+                        "in": "query",
+                        "description": "Records per page (default 25). Change the number of records per page.\n\n**Example:**\n- `\/shipwrecks?rpp=10`\n"
+                    },
+                    {
+                        "name": "kw",
+                        "in": "query",
+                        "description": "Keyword search\n\n**Example:**\n- `\/autocomplete?kw=ag`\n"
+                    },
+                    {
+                        "name": "kwt",
+                        "in": "query",
+                        "description": "Keyword search typ. Used conjunction with keyword search to define the search as either one(at least one of the words), all(all words, any order) or exact(exact match).\n\n**Example:**\n- `\/shipwrecks?kw=some+keywords&kwt=one`\n"
+                    },
+                    {
+                        "name": "kwe",
+                        "in": "query",
+                        "description": "Words to exclude from keyword search.\n\n**Example:**\n- `\/shipwrecks?kw=some+keywords&kwe=words+to+exclude`\n"
+                    },
+                    {
+                        "name": "nme",
+                        "in": "query",
+                        "description": "Ship name, case insensitive.\n\n**Example:**\n- `\/shipwrecks?nme=agnes`\n"
+                    },
+                    {
+                        "name": "num",
+                        "in": "query",
+                        "description": "Official ship number.\n\n**Example:**\n- `\/shipwrecks?num=152168`\n"
+                    },
+                    {
+                        "name": "ll",
+                        "in": "query",
+                        "description": "Location lost.\n\n**Example:**\n- `\/shipwrecks?ll=port+arthur`\n"
+                    },
+                    {
+                        "name": "yb_min",
+                        "in": "query",
+                        "description": "Year built minimum, use in conjunction with yb_max to form a range.\n\n**Example:**\n- `\/shipwrecks?yb_min=1885`\n"
+                    },
+                    {
+                        "name": "yb_max",
+                        "in": "query",
+                        "description": "Year built maximum, use in conjunction with yb_min to form a range.\n\n**Example:**\n- `\/shipwrecks?yb_max=1910`\n"
+                    },
+                    {
+                        "name": "yl_min",
+                        "in": "query",
+                        "description": "Year lost minimum, use in conjunction with yl_max to form a range.\n\n**Example:**\n- `\/shipwrecks?yl_min=1885`\n"
+                    },
+                    {
+                        "name": "yl_max",
+                        "in": "query",
+                        "description": "Year lost maximum, use in conjunction with yl_min to form a range.\n\n**Example:**\n- `\/shipwrecks?yl_max=1910`\n"
+                    },
+                    {
+                        "name": "dpp",
+                        "in": "query",
+                        "description": "Departure port.\n\n**Example:**\n- `\/shipwrecks?dpp=sydney`\n"
+                    },
+                    {
+                        "name": "dsp",
+                        "in": "query",
+                        "description": "Destination port.\n\n**Example:**\n- `\/shipwrecks?dsp=melbourne`\n"
+                    },
+                    {
+                        "name": "pc",
+                        "in": "query",
+                        "description": "Passenger and crew names.\n\n**Example:**\n- `\/shipwrecks?pc=McMillen`\n"
+                    },
+                    {
+                        "name": "cgo",
+                        "in": "query",
+                        "description": "Cargo description.\n\n**Example:**\n- `\/shipwrecks?cgo=timber`\n"
+                    },
+                    {
+                        "name": "plb",
+                        "in": "query",
+                        "description": "Place the ship was built.\n\n**Example:**\n- `\/shipwrecks?plb=hobart+tasmania`\n"
+                    },
+                    {
+                        "name": "plr",
+                        "in": "query",
+                        "description": "Place the ship was registered.\n\n**Example:**\n- `\/shipwrecks?plr=hobart+tasmania`\n"
+                    },
+                    {
+                        "name": "pro",
+                        "in": "query",
+                        "description": "Propulsion type. Numerical ID. The ID's and names of propulsion types can be retrieved from the \/ship-propulsions API endpoint.\n\n**Example:**\n- `\/shipwrecks?pro=3`\n"
+                    },
+                    {
+                        "name": "rig",
+                        "in": "query",
+                        "description": "Rig. Numerical ID. The ID's and names of rig types can be retrieved from the \/ship-rigs API endpoint.\n\n**Example:**\n- `\/shipwrecks?rig=3`\n"
+                    },
+                    {
+                        "name": "vup",
+                        "in": "query",
+                        "description": "Primary vessel usage. Numerical ID. The ID's and names of options can be retrieved from the \/ship-primary-uses API endpoint.\n\n**Example:**\n- `\/shipwrecks?vup=2`\n"
+                    },
+                    {
+                        "name": "vus",
+                        "in": "query",
+                        "description": "Secondary vessel usage. Numerical ID. The ID's and names of options can be retrieved from the \/ship-secondary-uses API endpoint.\n\n**Example:**\n- `\/shipwrecks?vus=4`\n"
+                    },
+                    {
+                        "name": "cm",
+                        "in": "query",
+                        "description": "Construction material. Numerical ID. The ID's and names of options can be retrieved from the \/ship-construction-materials API endpoint.\n\n**Example:**\n- `\/shipwrecks?cm=2`\n"
+                    },
+                    {
+                        "name": "pco",
+                        "in": "query",
+                        "description": "Period the ship was constructed. Numerical ID. The ID's and year ranges can be retrieved from the \/ship-periods-built API endpoint.\n\n**Example:**\n- `\/shipwrecks?pco=3`\n"
+                    },
+                    {
+                        "name": "pl",
+                        "in": "query",
+                        "description": "Period the ship was lost. Numerical ID. The ID's and year ranges can be retrieved from the \/ship-periods-lost API endpoint.\n\n**Example:**\n- `\/shipwrecks?pl=2`\n"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "description": "Sort results by name ascending or name descending (az or za). Send empty sort value to reset to default relevance sorting.\n\n**Example:**\n- `\/shipwrecks?sort=az`\n"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/vnd.vhd.v1+json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/PlaceItemResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/municipalities": {
+            "get": {
+                "summary": "Fetch the list of available municipalities.",
+                "description": "",
+                "operationId": "GetMunicipalities",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/vnd.vhd.v1+json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/PlaceItemResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/themes\/{themes_id}": {
+            "get": {
+                "summary": "Get the list of sub-themes for a given primary theme.",
+                "description": "",
+                "operationId": "GetThemeByID",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "themes_id",
+                        "in": "path",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/vnd.vhd.v1+json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/PlaceItemResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/ship-rigs": {
+            "get": {
+                "summary": "Get the list of available rig types",
+                "description": "",
+                "operationId": "GetShipRigs",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/vnd.vhd.v1+json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/PlaceItemResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/architectural-styles": {
+            "get": {
+                "summary": "Get the complete list of architectural styles",
+                "description": "",
+                "operationId": "GetArchitecturalStyles",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/vnd.vhd.v1+json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/PlaceItemResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/ship-secondary-uses": {
+            "get": {
+                "summary": "Get the list of secondary uses for shipwrecks",
+                "description": "",
+                "operationId": "GetShipSecondaryUses",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/vnd.vhd.v1+json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/PlaceItemResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/places": {
+            "get": {
+                "summary": "Retrieve paginated collection of VHD places.",
+                "description": "",
+                "operationId": "GetPlaces",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "rpp",
+                        "in": "query",
+                        "description": "Records per page (default 25). Change the number of records per page.\n\n**Example:**\n- `\/shipwrecks?rpp=10`\n"
+                    },
+                    {
+                        "name": "kw",
+                        "in": "query",
+                        "description": "Keyword search\n\n**Example:**\n- `\/autocomplete?kw=ag`\n"
+                    },
+                    {
+                        "name": "kwt",
+                        "in": "query",
+                        "description": "Keyword search typ. Used conjunction with keyword search to define the search as either one(at least one of the words), all(all words, any order) or exact(exact match).\n\n**Example:**\n- `\/shipwrecks?kw=some+keywords&kwt=one`\n"
+                    },
+                    {
+                        "name": "kwe",
+                        "in": "query",
+                        "description": "Words to exclude from keyword search.\n\n**Example:**\n- `\/shipwrecks?kw=some+keywords&kwe=words+to+exclude`\n"
+                    },
+                    {
+                        "name": "aut",
+                        "in": "query",
+                        "description": "Heritage authority. Numerical ID. The ID's and names of heritage authorities can be retrieved from the \/heritage-authorities API endpoint.\n\n**Example:**\n- `\/places?aut=2`\n"
+                    },
+                    {
+                        "name": "sub",
+                        "in": "query",
+                        "description": "Suburb.\n\n**Example:**\n- `\/places?sub=glenlyon`\n"
+                    },
+                    {
+                        "name": "str",
+                        "in": "query",
+                        "description": "Street.\n\n**Example:**\n- `\/places?str=brunswick+street`\n"
+                    },
+                    {
+                        "name": "mun",
+                        "in": "query",
+                        "description": "Municipality. Numerical ID. The ID's and names of municipalities can be retrieved from the \/municipalities API endpoint.\n\n**Example:**\n- `\/places?mun=4`\n"
+                    },
+                    {
+                        "name": "pos",
+                        "in": "query",
+                        "description": "Postcode.\n\n**Example:**\n- `\/places?pos=3056`\n"
+                    },
+                    {
+                        "name": "add",
+                        "in": "query",
+                        "description": "Municipality. Numerical ID. The ID's and names of municipalities can be retrieved from the \/municipalities API endpoint.\n\n**Example:**\n- `\/places?add=39+nicholson+street+abbotsford+yarra_city`\n"
+                    },
+                    {
+                        "name": "arc",
+                        "in": "query",
+                        "description": "Architect.\n\n**Example:**\n- `\/places?arc=davidson`\n"
+                    },
+                    {
+                        "name": "arcs",
+                        "in": "query",
+                        "description": "Architectural Style. Numerical ID. The ID's and names of architectural styles can be retrieved from the \/architectural-styles API endpoint.\n\n**Example:**\n- `\/places?arcs=3`\n"
+                    },
+                    {
+                        "name": "yc_min",
+                        "in": "query",
+                        "description": "Year of construction minimum. Use in conjunction with yc_max to form a range.\n\n**Example:**\n- `\/places?yc_min=1890`\n"
+                    },
+                    {
+                        "name": "yc_max",
+                        "in": "query",
+                        "description": "Year of construction maximum. Use in conjunction with yc_min to form a range.\n\n**Example:**\n- `\/places?yc_max=1920`\n"
+                    },
+                    {
+                        "name": "tp",
+                        "in": "query",
+                        "description": "Primary theme. Numerical ID. The ID's and names of themes can be retrieved from the \/themes API endpoint.\n\n**Example:**\n- `\/places?tp=2`\n"
+                    },
+                    {
+                        "name": "ts",
+                        "in": "query",
+                        "description": "Secondary theme. Numerical ID. The ID's and names of secondary themes are a property of individual primary themes and can be fetched at the \/themes\/<theme_id> API endpoint.\n\n**Example:**\n- `\/places?ts=4`\n"
+                    },
+                    {
+                        "name": "cp",
+                        "in": "query",
+                        "description": "Primary category. Numerical ID. The ID's and names of primary categories can be retrieved from the \/categories API endpoint.\n\n**Example:**\n- `\/places?cp=4`\n"
+                    },
+                    {
+                        "name": "cs",
+                        "in": "query",
+                        "description": "Secondary category. Numerical ID. The ID's and names of secondary categories are a property of individual primary categories and can be fetched at the \/categories\/<category_id> API endpoint.\n\n**Example:**\n- `\/places?cs=2`\n"
+                    },
+                    {
+                        "name": "cat",
+                        "in": "query",
+                        "description": "Heritage act categories. Numerical ID. The ID's and names of heritage act categories can be retrieved from the \/heritage-act-categories API endpoint.\n\n**Example:**\n- `\/places?cat=3`\n"
+                    },
+                    {
+                        "name": "per",
+                        "in": "query",
+                        "description": "Time period. Numerical ID. The ID's and year ranges of time periods can be retrieved from the \/periods API endpoint.\n\n**Example:**\n- `\/places?per=4`\n"
+                    },
+                    {
+                        "name": "nme",
+                        "in": "query",
+                        "description": "Ship name, case insensitive.\n\n**Example:**\n- `\/shipwrecks?nme=agnes`\n"
+                    },
+                    {
+                        "name": "nmf",
+                        "in": "query",
+                        "description": "Former name.\n\n**Example:**\n- `\/places?nmf=the+grange`\n"
+                    },
+                    {
+                        "name": "his",
+                        "in": "query",
+                        "description": "History. Keyword search on the historical information of a place.\n\n**Example:**\n- `\/places?his=some+keywords`\n"
+                    },
+                    {
+                        "name": "idn",
+                        "in": "query",
+                        "description": "Unique numbers assigned to each place\/object e.g H0001 (VHR Number), H7121-0003 (Heritage Inventory No) or HO123. Local heritage places on the Heritage Overlay (HO) - use the prefix HO.\n\n**Example:**\n- `\/places?idn=H1522`\n"
+                    },
+                    {
+                        "name": "geo",
+                        "in": "query",
+                        "description": "Get all places within a given radius of a geographic location point. Format is lat,lon,distance.\n\n**Example:**\n- `\/places?geo=-37.803030,145.004620,1`\n"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "description": "Sort results by name ascending or name descending (az or za). Send empty sort value to reset to default relevance sorting.\n\n**Example:**\n- `\/shipwrecks?sort=az`\n"
+                    },
+                    {
+                        "name": "collapse",
+                        "in": "query",
+                        "description": "Occasionally places will have multiple records under different heritage authorities. Use this parameter to force records to be collapsed under a primary record or listed individually.\n\n**Example:**\n- `\/places?collapse=true`\n"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/vnd.vhd.v1+json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/PlaceItemResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/ship-periods-lost": {
+            "get": {
+                "summary": "Get the list of available 5 year periods for date lost.",
+                "description": "",
+                "operationId": "GetShipPeriodsLost",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/vnd.vhd.v1+json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/PlaceItemResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "ShipwrecksResponse": {
+                "type": "object",
+                "properties": {
+                    "_links": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "_embedded": {
+                        "description": "",
+                        "type": "object"
+                    }
+                }
+            },
+            "_links": {
+                "type": "object"
+            },
+            "_embedded": {
+                "type": "object"
+            },
+            "ShipwrecksCollectionResponse": {
+                "type": "object",
+                "properties": {
+                    "_links": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "_embedded": {
+                        "description": "",
+                        "type": "object"
+                    }
+                }
+            },
+            "ShipRigsResponse": {
+                "type": "object",
+                "properties": {
+                    "_links": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "_embedded": {
+                        "description": "",
+                        "type": "object"
+                    }
+                }
+            },
+            "PlaceItemResponse": {
+                "type": "object",
+                "properties": {
+                    "_links": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "id": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "significance": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "significance_updated_at": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "vhr_number": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "hi_number": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "citation": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "extent_of_registration": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "longtitude": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "latitude": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "historical_notes": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "comparisons": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "heritage_inventory_description": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "precinct_name": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "place_owner_name": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "registered_on": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "registration_last_amended_on": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "construction_start": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "other_names": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "descriptions": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "images": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "addresses": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "municipalities": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "permit_exemptions": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "attachments": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "primary_themes": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "secondary_themes": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "related_places": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "_embedded": {
+                        "description": "",
+                        "type": "object"
+                    }
+                }
+            },
+            "ThemesResponse": {
+                "type": "object",
+                "properties": {
+                    "_links": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "_embedded": {
+                        "description": "",
+                        "type": "object"
+                    }
+                }
+            },
+            "ShipwreckItemResponse": {
+                "type": "object",
+                "properties": {
+                    "_links": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "id": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "significance": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "location": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "length": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "breadth": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "depth": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "builder": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "built_country": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "built_year": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "built_port": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "cargo": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "crew": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "crew_number": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "classification": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "date_lost": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "year_lost": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "destination": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "departure": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "engine_builder": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "engine_specification": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "how_lost": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "master": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "ship_number": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "passengers": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "owner": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "registration_number": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "registration_country": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "registration_former_details": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "registration_port": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "vhr_history": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "hull": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "weather": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "alternative_names": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "primary_uses": {
+                        "description": "Array of primary uses",
+                        "type": "array"
+                    },
+                    "secondary_uses": {
+                        "description": "Array of secondary uses",
+                        "type": "array"
+                    },
+                    "images": {
+                        "description": "Array of images",
+                        "type": "array"
+                    }
+                }
+            },
+            "primary_uses": {
+                "type": "array"
+            },
+            "secondary_uses": {
+                "type": "array"
+            },
+            "images": {
+                "type": "array"
+            },
+            "ShipSecondaryUsesResponse": {
+                "type": "object",
+                "properties": {
+                    "_links": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "_embedded": {
+                        "description": "",
+                        "type": "object"
+                    }
+                }
+            },
+            "LinksSelfBaseObject": {
+                "type": "object",
+                "properties": {
+                    "_links": {
+                        "description": "",
+                        "type": "object"
+                    }
+                }
+            },
+            "PlacesResponse": {
+                "type": "object",
+                "properties": {
+                    "_links": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "_embedded": {
+                        "description": "",
+                        "type": "object"
+                    }
+                }
+            },
+            "PlacesCollectionResponse": {
+                "type": "object",
+                "properties": {
+                    "_links": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "_embedded": {
+                        "description": "",
+                        "type": "object"
+                    }
+                }
+            },
+            "ShipPrimaryUsesResponse": {
+                "type": "object",
+                "properties": {
+                    "_links": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "_embedded": {
+                        "description": "",
+                        "type": "object"
+                    }
+                }
+            },
+            "RecommendedToursResponse": {
+                "type": "object",
+                "properties": {
+                    "_links": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "_embedded": {
+                        "description": "",
+                        "type": "object"
+                    }
+                }
+            },
+            "ThemeItemResponse": {
+                "type": "object",
+                "properties": {
+                    "_links": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "id": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "secondary_themes": {
+                        "description": "Array of secondary theme names",
+                        "type": "array"
+                    }
+                }
+            },
+            "secondary_themes": {
+                "type": "array"
+            },
+            "HeritageActCategoriesResponse": {
+                "type": "object",
+                "properties": {
+                    "_links": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "_embedded": {
+                        "description": "",
+                        "type": "object"
+                    }
+                }
+            },
+            "RecommendedTourItemResponse": {
+                "type": "object",
+                "properties": {
+                    "_links": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "_embedded": {
+                        "description": "",
+                        "type": "object"
+                    }
+                }
+            },
+            "PeriodsResponse": {
+                "type": "object",
+                "properties": {
+                    "_links": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "_embedded": {
+                        "description": "",
+                        "type": "object"
+                    }
+                }
+            },
+            "AutocompleteResponse": {
+                "type": "object",
+                "properties": {
+                    "_links": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "_embedded": {
+                        "description": "",
+                        "type": "object"
+                    }
+                }
+            },
+            "MunicipalitiesResponse": {
+                "type": "object",
+                "properties": {
+                    "_links": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "_embedded": {
+                        "description": "",
+                        "type": "object"
+                    }
+                }
+            },
+            "ShipConstructionMaterialResponse": {
+                "type": "object",
+                "properties": {
+                    "_links": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "_embedded": {
+                        "description": "",
+                        "type": "object"
+                    }
+                }
+            },
+            "ArchitecturalStylesResponse": {
+                "type": "object",
+                "properties": {
+                    "_links": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "_embedded": {
+                        "description": "",
+                        "type": "object"
+                    }
+                }
+            },
+            "ShipPeriodsLostResponse": {
+                "type": "object",
+                "properties": {
+                    "_links": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "id": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "start_year": {
+                        "description": "Start year for period",
+                        "type": "string"
+                    },
+                    "end_year": {
+                        "description": "End year for period",
+                        "type": "string"
+                    },
+                    "sw_image_image_id": {
+                        "description": "The image id for an image from a random record for this period. (can be null)",
+                        "type": "string"
+                    }
+                }
+            },
+            "CategoriesResponse": {
+                "type": "object",
+                "properties": {
+                    "_links": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "_embedded": {
+                        "description": "",
+                        "type": "object"
+                    }
+                }
+            },
+            "ShipPeriodsBuiltResponse": {
+                "type": "object",
+                "properties": {
+                    "_links": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "_embedded": {
+                        "description": "",
+                        "type": "object"
+                    }
+                }
+            },
+            "ShipPropulsionsResponse": {
+                "type": "object",
+                "properties": {
+                    "_links": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "_embedded": {
+                        "description": "",
+                        "type": "object"
+                    }
+                }
+            },
+            "ArchitectsResponse": {
+                "type": "object",
+                "properties": {
+                    "_links": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "_embedded": {
+                        "description": "",
+                        "type": "object"
+                    }
+                }
+            },
+            "CategoriesItemResponse": {
+                "type": "object",
+                "properties": {
+                    "_links": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "id": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "sub_categories": {
+                        "description": "Array of id:sub category name",
+                        "type": "array"
+                    }
+                }
+            },
+            "sub_categories": {
+                "type": "array"
+            },
+            "HeritageAuthoritiesResponse": {
+                "type": "object",
+                "properties": {
+                    "_links": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "_embedded": {
+                        "description": "",
+                        "type": "object"
+                    }
+                }
+            },
+            "col": {
+                "type": "array"
+            }
+        }
+    }
+}

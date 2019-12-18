@@ -1,0 +1,220 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "EPA AirWatch API",
+        "description": "AirWatch API published by the Environment Protection Authority (EPA) - Victoria providing interested external organisations access to all air quality data that the EPA collects from both long-term (fixed) and incident air monitoring sites. \n\n## Getting Started\n\nThe EPA has a number of sites across Victoria that are used as locations where monitoring takes place.\n\nAt each site, there are a number of Monitors that are used to collect the information.\n\nThe **\/sites** endpoint provides a list of the sites that the EPA is or has monitored in the past.\n\nUse this endpoint to find a site that you wish to find more information about.\n\nYou can then use the following endpoints with the SiteID to gather more detailed information:\n\n- **\/StationData** - provides information about the site\/station.\n- **\/Monitors** - provides the list of monitors that have been at this location\n- **\/Measurements** - provides a list of measurements captured at this site\n- **\/TimeBasis** - provides a list of the Time Ba",
+        "termsOfService": "http:\/\/exmple.com\/license\/"
+    },
+    "servers": [
+        "http:\/\/api.vic.gov.au:443\/epa\/v1.0\/airwatch"
+    ],
+    "paths": {
+        "\/Sites2DayAirQuality": {
+            "get": {
+                "summary": "Returns the last 2 days of air quality measurements for all operating sites.",
+                "description": "This provides the last two-days of all air quality data available for all sites currently operating, including Incident Air Monitoring (IAM) sites. The two days of data ends at the completed 1-hour period closest to the \u2018current\u2019 1-hour period. \n\nThe \u2018current\u2019 1-hour period is the hour that finished before the time now, less a \u2018buffer\u2019 period. For example at the time 15:25 the current 1-hour period is 13:00 to 14:00. Currently the buffer period is 35 minutes. T\n\nThere are no paramete",
+                "operationId": "GET\/Sites2DayAirQuality",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "search results matching criteria"
+                    }
+                }
+            }
+        },
+        "\/SitesHourlyAirQuality": {
+            "get": {
+                "summary": "Returns in a structure suitable for tabular presentation all air quality measurements for a single specified hour for all operating sites.",
+                "description": "This is the default GET TimeBasis foundation web service without parameters. This returns a collection listing all available records of Time_Basis with associated Measurement records falling within the date range, and for site_id and\/or monitor_id if provided. \n\n  - fromDate - default is 48 hours prior to the current date and hour. \n  - toDate - default is the current date and hour.\n",
+                "operationId": "GET\/SitesHourlyAirQuality",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "datetimestart",
+                        "in": "query",
+                        "description": "The 1-hour period for which the web service is to return data, provided as text in the format \u2018YYYYMMDDHH\u2019 where \u2018HH\u2019 is in the 24-hour clock."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "search results matching criteria"
+                    }
+                }
+            }
+        },
+        "\/Measurements": {
+            "get": {
+                "summary": "Provide a set of air quality Measurements that the EPA has made for a specific Monitor at a specific Site over a specific date range.",
+                "description": "This returns a collection listing all available Measurement records falling within the date range, and for site_id and\/or monitor_id and\/or time_basis_id if provided. \n\n- time_basis_id - default is \u20181HR_AV\u2019 \n- from_date - default is 48 hours prior to the current date and hour. \n- to_date - default is the current date and hour\n",
+                "operationId": "GET\/Measurements",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "siteId",
+                        "in": "query",
+                        "description": "Code number identifying the Site at which the EPA monitors air quality, which the Sites service list \u2013 mandatory."
+                    },
+                    {
+                        "name": "monitorId",
+                        "in": "query",
+                        "description": "ID string for a Monitor measured at the Site \u2013 mandatory"
+                    },
+                    {
+                        "name": "timeBasisId",
+                        "in": "query",
+                        "description": "ID string for the Time Basis of the Measurements, for example 1HR_AV or 24HR_RAV \u2013 mandatory."
+                    },
+                    {
+                        "name": "fromDate",
+                        "in": "query",
+                        "description": "The start date of the date range for the Measurements, provided as text in the format \u2018YYYYMMDDHH\u2019 \u2013 mandatory. \u2018HH\u2019 is the hour in 24-hour time format."
+                    },
+                    {
+                        "name": "toDate",
+                        "in": "query",
+                        "description": "The end date of the date range, provided as text in the format \u2018YYYYMMDDHH\u2019 - mandatory. The maximum date range is 183 days."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "search results matching criteria"
+                    }
+                }
+            }
+        },
+        "\/GetAirQualityAirDataList": {
+            "get": {
+                "summary": "Returns the last 2 days of air quality measurements for all operating sites (provided to support existing web sites).",
+                "description": "",
+                "operationId": "GET\/GetAirQualityAirDataList",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "search results matching criteria"
+                    }
+                }
+            }
+        },
+        "\/StationData": {
+            "get": {
+                "summary": "Returns the last 2 days of air quality measurements for a specific site.",
+                "description": "Provide the last two-days of air quality data for a specific Site that is currently operational.\n\nThe two-day period ends at the \u2018current\u2019 1-hour period. \n",
+                "operationId": "GET\/StationData",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "pointId",
+                        "in": "query",
+                        "description": "Code number identifying the Site at which the EPA monitors air quality, which the Sites service list \u2013 mandatory."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "search results matching criteria"
+                    }
+                }
+            }
+        },
+        "\/Monitors": {
+            "get": {
+                "summary": "List of physical characteristics (monitors or parameters) of air measured at a specific site over a specific time period \u2013 examples include CO, NO2, or PM2.5.",
+                "description": "Provide a list of Monitors measured at a specific Site within a time period. A Monitor represents a chemical or physical property of the air at the Site, such as CO or NO2 concentration, or the density of suspended particulate matter. (Dust and smoke are common forms of particulate matter suspended in air.) A common synonym for Monitor is Parameter.  \n\n- from_date - default is 48 hours prior to the current date and hour. \n- to_date - default is the current date and hour.\n",
+                "operationId": "GET\/Monitors",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "siteId",
+                        "in": "query",
+                        "description": "Code number identifying the Site at which the EPA monitors air quality, which the Sites service list \u2013 mandatory."
+                    },
+                    {
+                        "name": "fromDate",
+                        "in": "query",
+                        "description": "The start date of the date range for the Measurements, provided as text in the format \u2018YYYYMMDDHH\u2019 \u2013 mandatory. \u2018HH\u2019 is the hour in 24-hour time format."
+                    },
+                    {
+                        "name": "toDate",
+                        "in": "query",
+                        "description": "The end date of the date range, provided as text in the format \u2018YYYYMMDDHH\u2019 - mandatory. The maximum date range is 183 days."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "search results matching criteria"
+                    }
+                }
+            }
+        },
+        "\/Sites": {
+            "get": {
+                "summary": "Provide a list of locations (Sites) at which the EPA operated air quality monitoring equipment for a time period.",
+                "description": "First of the four \u2018foundation\u2019 web services that provide access to all air quality data that the EPA has collected. The first three foundation web services provide reference data necessary for the fourth Measurements service, which provides the air quality measurement data. \n",
+                "operationId": "GET\/Sites",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "monitoringPurpose",
+                        "in": "query",
+                        "description": "Code number identifying the purpose of the air quality monitoring. Use 1010."
+                    },
+                    {
+                        "name": "fromDate",
+                        "in": "query",
+                        "description": "The start date of the date range for the Measurements, provided as text in the format \u2018YYYYMMDDHH\u2019 \u2013 mandatory. \u2018HH\u2019 is the hour in 24-hour time format."
+                    },
+                    {
+                        "name": "toDate",
+                        "in": "query",
+                        "description": "The end date of the date range, provided as text in the format \u2018YYYYMMDDHH\u2019 - mandatory. The maximum date range is 183 days."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "search results matching criteria"
+                    }
+                }
+            }
+        },
+        "\/TimeBasis": {
+            "get": {
+                "summary": "Provide a list of the Time Basis over which the EPA measures each Monitor at each Site.",
+                "description": "The most commonly calculated and presented Time Basis is a 1-hour average Measurement (1HR_AV). The most detailed available Time Basis is 5MIN_AV. \nOther Time Basis that the EPA currently use comprise 8-hour rolling average, calculated hourly, for CO, and 24-hour rolling average, calculated hourly, for PM2.5 \n\n  - fromDate - default is 48 hours prior to the current date and hour. \n  - toDate - default is the current date and hour.\n",
+                "operationId": "GET\/TimeBasis",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "siteId",
+                        "in": "query",
+                        "description": "Code number identifying the Site at which the EPA monitors air quality, which the Sites service list \u2013 mandatory."
+                    },
+                    {
+                        "name": "monitorId",
+                        "in": "query",
+                        "description": "ID string for a Monitor measured at the Site \u2013 mandatory"
+                    },
+                    {
+                        "name": "fromDate",
+                        "in": "query",
+                        "description": "The start date of the date range for the Measurements, provided as text in the format \u2018YYYYMMDDHH\u2019 \u2013 mandatory. \u2018HH\u2019 is the hour in 24-hour time format."
+                    },
+                    {
+                        "name": "toDate",
+                        "in": "query",
+                        "description": "The end date of the date range, provided as text in the format \u2018YYYYMMDDHH\u2019 - mandatory. The maximum date range is 183 days."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "search results matching criteria"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": []
+    }
+}

@@ -1,0 +1,212 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "ABS Labour Force API",
+        "description": "This API provides Australian Bureau of Statistics labor force data in an easily consumable format for developers. Labour force data includes employment statistics by region, sex, age groups and labour utilisation using original, seasonally adjusted and trend markers since 1978.\n\n# Getting Started\nThis API retrieves the labour force statistics dataset. The following filters can be applied to filter the dataset.\n\n## region (required)\nProvide a valid enum value in the query parameter to get statistics data for a region.\n\n**Example:** `...?region=VICTORIA`\n\nThe below table shows the available regions as *enums* and their corresponding *description*\n\n| Enum | Description |\n| -- | -- |\n| AUSTRALIA | Australia |\n| NEW_SOUTH_WALES | New South Wales |\n| VICTORIA | Victoria |\n| QUEENSLAND | Queensland |\n| SOUTH_AUSTRALIA | South Australia |\n| WESTERN_AUSTRALIA | Western Australia |\n| TASMANIA | Tasmania |\n| NORTHERN_TERRITORY | Northern Territory |\n| AUSTRALIAN_CAPITAL_TERRITORY | Australian Cap",
+        "termsOfService": "http:\/\/exmple.com\/license\/"
+    },
+    "servers": [
+        "http:\/\/api.vic.gov.au:443\/abs\/v1.0"
+    ],
+    "paths": {
+        "\/labour-force-statistics": {
+            "get": {
+                "summary": "ABS Statistics datasets for Labour Force",
+                "description": "ABS Statistics datasets for Labour Force",
+                "operationId": "GET\/labourForceStatistics",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "region",
+                        "in": "query",
+                        "description": "Provide a valid region *enum* value. See documentation for available *enums*"
+                    },
+                    {
+                        "name": "data_item",
+                        "in": "query",
+                        "description": "Provide a valid data_item *enum* value. See documentation for available *enums*"
+                    },
+                    {
+                        "name": "age",
+                        "in": "query",
+                        "description": "Provide a valid age *enum* value. See documentation for available *enums*"
+                    },
+                    {
+                        "name": "sex",
+                        "in": "query",
+                        "description": "If empty, returns data for all values. Provide a valid sex *enum* value. See documentation for available *enums*"
+                    },
+                    {
+                        "name": "adjustment_type",
+                        "in": "query",
+                        "description": "If empty, returns data for all values. Provide a valid adjustment_type *enum* value. See documentation for available *enums*"
+                    },
+                    {
+                        "name": "start_period",
+                        "in": "query",
+                        "description": "Observation Start Period. The statistical data for Labour Force is available from the period of `Feb 1978`\n\n__Format:__\n`YYYY-MM`\n\n__Some valid Eamples:__\n  `1978-02`\n  `2019-01`\n"
+                    },
+                    {
+                        "name": "end_period",
+                        "in": "query",
+                        "description": "Observation End Period. The statistical data for Labour Force is available until the `previous month`\n\n__Format:__\n`YYYY-MM`\n\n__Some valid Eamples:__\n  `1978-02`\n  `2019-08`\n"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "The page number requested, starting from 1. Default to 1."
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "The number of records displayed per page. Default to 1000."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/labourForceStatisticsResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "linkModel": {
+                "type": "object",
+                "properties": {
+                    "href": {
+                        "description": "The URL to the referenced resource",
+                        "type": "string"
+                    },
+                    "rel": {
+                        "description": "The description of the relationship between the resources",
+                        "type": "string"
+                    }
+                }
+            },
+            "labourForceSeries": {
+                "type": "object",
+                "properties": {
+                    "region_description": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "data_item_description": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "sex_description": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "age_description": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "adjustment_type_description": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "observation_month": {
+                        "description": "Observation month",
+                        "type": "string"
+                    },
+                    "observation_value": {
+                        "description": "Observation value",
+                        "type": "number"
+                    }
+                }
+            },
+            "labourForceStatisticsResponse": {
+                "type": "object",
+                "properties": {
+                    "_meta": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "_links": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "labour_force_statistics": {
+                        "description": "",
+                        "type": "array"
+                    }
+                }
+            },
+            "_meta": {
+                "type": "object"
+            },
+            "_links": {
+                "type": "object"
+            },
+            "labour_force_statistics": {
+                "type": "array"
+            },
+            "metaModel": {
+                "type": "object",
+                "properties": {
+                    "response_time": {
+                        "description": "The response time for this request in human readable format.",
+                        "type": "string"
+                    },
+                    "response_time_ms": {
+                        "description": "The response time for this request in milliseconds.",
+                        "type": "integer"
+                    },
+                    "total_records": {
+                        "description": "Total number of the results which meets the search criteria regardless of the page and limit.",
+                        "type": "integer"
+                    },
+                    "page": {
+                        "description": "The current page for this collection request.",
+                        "type": "integer"
+                    },
+                    "limit": {
+                        "description": "The number of records per page.",
+                        "type": "integer"
+                    },
+                    "count": {
+                        "description": "Number of records in the current page",
+                        "type": "integer"
+                    }
+                }
+            },
+            "linksModel": {
+                "type": "array"
+            },
+            "errorModel": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Identifier of the specific error.",
+                        "type": "string"
+                    },
+                    "message": {
+                        "description": "An application-specific error message.",
+                        "type": "string"
+                    },
+                    "errorDetail": {
+                        "description": "A human-readable explanation specific to this occurrence of the problem.",
+                        "type": "string"
+                    }
+                }
+            },
+            "sex": {
+                "type": "array"
+            },
+            "adjustment_type": {
+                "type": "array"
+            }
+        }
+    }
+}

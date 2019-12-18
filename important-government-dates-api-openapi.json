@@ -1,0 +1,219 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "1.1.0",
+        "title": "Important Government Dates API",
+        "description": "The Dates API provides clients with the ability to query and retrieve a collection of important dates that are relevant to the State of Victoria.  Clients can retrieve a list of dates based on a date range or a date type such as public holiday, school term or multi-faith day.\n\nAuthorised clients can manage dates within the API by allowing them to create, update and delete date records.\n\n# Getting Started\nAccess to the API requires an API Key and Secret.\n\nOnce you have obtained these, try submitting the follwing API requests:\n\n- Get all public holidays in 2019 and only display 20 records per page: https:\/\/api.vic.gov.au\/vicgov\/v1\/dates?type=PUBLIC_HOLIDAY&start_date=2019-01-01&end_date=2019-12-01&limit=20\n- Get all public holidays in the first half of 2019 and sort this by dates in descending order: https:\/\/api.vic.gov.au\/vicgov\/v1\/dates?type=PUBLIC_HOLIDAY&start_date=2019-01-01&end_date=2019-06-30&sort=date:desc\n- Download all dates for 2019 in CSV format: https:\/\/api.vic.gov.au\/vicgov",
+        "termsOfService": "http:\/\/exmple.com\/license\/"
+    },
+    "servers": [
+        "http:\/\/api.vic.gov.au:443\/vicgov\/v1.0"
+    ],
+    "paths": {
+        "\/dates": {
+            "get": {
+                "summary": "Get a list of dates.",
+                "description": "Note that pagination is enabled by default for performance reasons.  The default limit value is 50 records per page.",
+                "operationId": "GET\/dates",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "description": "Type of date.  Possible values are: \n\n- PUBLIC_HOLIDAY\n- DAYLIGHT_SAVING\n- SCHOOL_TERM\n- SCHOOL_HOLIDAY\n- FLAG_NOTIFICATION\n- PARLIAMENT_SITTING\n- MULTI_FAITH\n\nYou can combine multiple date types together as part of your search, for e.g. type=PUBLIC_HOLIDAY,SCHOOL_HOLIDAY. \n"
+                    },
+                    {
+                        "name": "from_date",
+                        "in": "query",
+                        "description": "Start date to search from (including the date).  **TIP:** If the from_date and tod_date values are the same, this will return results for that particular date.  Dates are formatted according to ISO 8601 as \"yyyy-MM-dd\"\n"
+                    },
+                    {
+                        "name": "to_date",
+                        "in": "query",
+                        "description": "End date to search to (including the date), including this date. **WARNING:** The to_date value must not be a date that occurs before the from_date.  Dates are formatted according to ISO 8601 as \"yyyy-MM-dd\"\n"
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "description": "Option to specify the output format. If no format is specified, the default is to return a json payload."
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "The page number requested, starting from 1."
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "The number of records displayed per page."
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "description": "Sort the results in ascending or descending order. The available sort indexes are: \n  - `uuid` - Sort by uuid in ascending or descending order\n    - e.g. `sort=uuid:asc` or `sort=uuid:desc`\n  - `date` - Sort by date in ascending or descending order\n    - e.g. `sort=date:asc` or `sort=date:desc`\n  - `type` - Sort by date type in ascending or descending order, \n    - e.g. `sort=type:asc` or `sort=type:desc`\n\nYou can also combine multiple sort parameters, for e.g `sort=date:asc,type:asc`\n"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success Response",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/GetDatesResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "summary": "Create a date.",
+                "description": "This method is for internal data adminstrators only.",
+                "operationId": "POST\/dates",
+                "deprecated": 0,
+                "parameters": []
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "DateSummary": {
+                "type": "object",
+                "properties": {
+                    "_links": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "uuid": {
+                        "description": "The unique id for this record.",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "Name of the event",
+                        "type": "string"
+                    },
+                    "type": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "date": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Any special comments regarding the event on this date",
+                        "type": "string"
+                    }
+                }
+            },
+            "_links": {
+                "type": "array"
+            },
+            "type": {
+                "type": "object"
+            },
+            "DeleteDatesRequest": {
+                "type": "object",
+                "properties": {
+                    "confirm": {
+                        "description": "",
+                        "type": "boolean"
+                    }
+                }
+            },
+            "GetDatesResponse": {
+                "type": "object",
+                "properties": {
+                    "_meta": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "_links": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "_embedded": {
+                        "description": "",
+                        "type": "object"
+                    }
+                }
+            },
+            "_meta": {
+                "type": "object"
+            },
+            "_embedded": {
+                "type": "object"
+            },
+            "PostDatesRequest": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "description": "Name of the event",
+                        "type": "string"
+                    },
+                    "type": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "date": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "publisher": {
+                        "description": "authority who publishes this date",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Any special comments regarding the event on this date",
+                        "type": "string"
+                    },
+                    "source": {
+                        "description": "a website reference for the information",
+                        "type": "string"
+                    }
+                }
+            },
+            "Date": {
+                "type": "object",
+                "properties": {
+                    "_meta": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "_links": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "uuid": {
+                        "description": "The unique id for this record.",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "Name of the event",
+                        "type": "string"
+                    },
+                    "type": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "date": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "publisher": {
+                        "description": "authority who publishes this date",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Any special comments regarding the event on this date",
+                        "type": "string"
+                    },
+                    "source": {
+                        "description": "a website reference for the information",
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}

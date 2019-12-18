@@ -1,0 +1,1048 @@
+{
+    "id": "5eec6694047f986460fcce2d8c4438c8",
+    "name": "Victorian Heritage API",
+    "description": null,
+    "auth": null,
+    "events": null,
+    "variables": [],
+    "order": [],
+    "folders_order": [],
+    "folders": [],
+    "requests": [
+        {
+            "id": "acd2699a3622641e7eecea5e598a75c6",
+            "name": "Fetch all information relating to a specific place. Requires a place id number.",
+            "url": "http:\/\/api.vic.gov.au:443\/vhd\/1.0\/places\/{places_id}",
+            "description": "",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "places_id",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "5eec6694047f986460fcce2d8c4438c8",
+            "rawModeData": ""
+        },
+        {
+            "id": "98c9f397b582419873adcd81736ec3bd",
+            "name": "Fetch a collection of places  e.g: \/places-collection?col[]=1&col[]=2&col[]=3.",
+            "url": "http:\/\/api.vic.gov.au:443\/vhd\/1.0\/places-collection",
+            "description": "",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "col",
+                    "description": "Get a collection of places\n\n**Example:**\n- `\/places-collection?col=1&col=2&col=3.`\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "5eec6694047f986460fcce2d8c4438c8",
+            "rawModeData": ""
+        },
+        {
+            "id": "79ed280995333714f829edf7ddf8f8dc",
+            "name": "Retrieve a list of sub categories for a given category.",
+            "url": "http:\/\/api.vic.gov.au:443\/vhd\/1.0\/categories\/{categories_id}",
+            "description": "",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "categories_id",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "5eec6694047f986460fcce2d8c4438c8",
+            "rawModeData": ""
+        },
+        {
+            "id": "085156d6aafaf9d3b61c93b64ddfea03",
+            "name": "Use the kw parameter to retrieve an array of suggested words. e.g: \/autocomplete?kw=foo",
+            "url": "http:\/\/api.vic.gov.au:443\/vhd\/1.0\/autocomplete",
+            "description": "",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "kw",
+                    "description": "Keyword search\n\n**Example:**\n- `\/autocomplete?kw=ag`\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "dic",
+                    "description": "???\n\n**Example:**\n- `\/autocomplete?dic=??`\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "5eec6694047f986460fcce2d8c4438c8",
+            "rawModeData": ""
+        },
+        {
+            "id": "fa8b9189d9e2910164db223e4f171257",
+            "name": "Fetch all information for a specific shipwreck.",
+            "url": "http:\/\/api.vic.gov.au:443\/vhd\/1.0\/shipwrecks\/{shipwrecks_id}",
+            "description": "",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "shipwrecks_id",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "5eec6694047f986460fcce2d8c4438c8",
+            "rawModeData": ""
+        },
+        {
+            "id": "467886f5d1cee75dc4ccdd2d41f5a8a9",
+            "name": "Access this endpoint to retrieve the full paginated list of recommended tours.",
+            "url": "http:\/\/api.vic.gov.au:443\/vhd\/1.0\/recommended-tours",
+            "description": "",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "5eec6694047f986460fcce2d8c4438c8",
+            "rawModeData": ""
+        },
+        {
+            "id": "107168d5ed5e19d7d01ab97baee15f28",
+            "name": "Retrieve a collection of shipwrecks.",
+            "url": "http:\/\/api.vic.gov.au:443\/vhd\/1.0\/shipwrecks-collection",
+            "description": "",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "col",
+                    "description": "Get a collection of places\n\n**Example:**\n- `\/places-collection?col=1&col=2&col=3.`\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "5eec6694047f986460fcce2d8c4438c8",
+            "rawModeData": ""
+        },
+        {
+            "id": "674a62abc81f99f8f09c2e3f914c426d",
+            "name": "Retrieve a list of categories",
+            "url": "http:\/\/api.vic.gov.au:443\/vhd\/1.0\/categories",
+            "description": "",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "5eec6694047f986460fcce2d8c4438c8",
+            "rawModeData": ""
+        },
+        {
+            "id": "2fbb3fec85e32c92890bdaa023f6336e",
+            "name": "Get the list of available 5 year periods for year built.",
+            "url": "http:\/\/api.vic.gov.au:443\/vhd\/1.0\/ship-periods-built",
+            "description": "",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "5eec6694047f986460fcce2d8c4438c8",
+            "rawModeData": ""
+        },
+        {
+            "id": "ae034c2f3f49b83d129eaf224ba009cc",
+            "name": "Access this endpoint with a Tour ID to retrieve the full information about a specific tour.",
+            "url": "http:\/\/api.vic.gov.au:443\/vhd\/1.0\/recommended-tours\/{recommended_tours_id}",
+            "description": "",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "recommended_tours_id",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "5eec6694047f986460fcce2d8c4438c8",
+            "rawModeData": ""
+        },
+        {
+            "id": "047497dfdffb4355d4e78f9145425d44",
+            "name": "Get the complete list of ship propulsion types",
+            "url": "http:\/\/api.vic.gov.au:443\/vhd\/1.0\/ship-propulsions",
+            "description": "",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "5eec6694047f986460fcce2d8c4438c8",
+            "rawModeData": ""
+        },
+        {
+            "id": "a4798dba17b546f865ef6c43e62cf430",
+            "name": "Get the list of available primary themes.",
+            "url": "http:\/\/api.vic.gov.au:443\/vhd\/1.0\/themes",
+            "description": "",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "5eec6694047f986460fcce2d8c4438c8",
+            "rawModeData": ""
+        },
+        {
+            "id": "c13cc67763fe354236628bc3701a3b50",
+            "name": "Get the complete list of Heritage Authorities, to fetch only those Heritage Authorities that have records pass in the 'hasListings' parameter with a trueish value. (\/heritage-authorities?hasListings=true)",
+            "url": "http:\/\/api.vic.gov.au:443\/vhd\/1.0\/heritage-authorities",
+            "description": "",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "5eec6694047f986460fcce2d8c4438c8",
+            "rawModeData": ""
+        },
+        {
+            "id": "796e9028a821b91c175f7202d03516a1",
+            "name": "Get the list of available 5 year periods",
+            "url": "http:\/\/api.vic.gov.au:443\/vhd\/1.0\/periods",
+            "description": "",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "5eec6694047f986460fcce2d8c4438c8",
+            "rawModeData": ""
+        },
+        {
+            "id": "280e8e59a3d3270a3eba0f83577c9d58",
+            "name": "Get the full list of available construction materials.",
+            "url": "http:\/\/api.vic.gov.au:443\/vhd\/1.0\/ship-construction-materials",
+            "description": "",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "5eec6694047f986460fcce2d8c4438c8",
+            "rawModeData": ""
+        },
+        {
+            "id": "eb35f4a24bc3fe6d4b31199a132c0b05",
+            "name": "Get the complete list of heritage act categories",
+            "url": "http:\/\/api.vic.gov.au:443\/vhd\/1.0\/heritage-act-categories",
+            "description": "",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "5eec6694047f986460fcce2d8c4438c8",
+            "rawModeData": ""
+        },
+        {
+            "id": "850b56c3dc3fc7aee0ced2f93e19a878",
+            "name": "Get the list of primary uses for shipwrecks",
+            "url": "http:\/\/api.vic.gov.au:443\/vhd\/1.0\/ship-primary-uses",
+            "description": "",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "5eec6694047f986460fcce2d8c4438c8",
+            "rawModeData": ""
+        },
+        {
+            "id": "23c66cbf446f7531a8d6466f6e618309",
+            "name": "Get the list of available architects",
+            "url": "http:\/\/api.vic.gov.au:443\/vhd\/1.0\/architects",
+            "description": "",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "5eec6694047f986460fcce2d8c4438c8",
+            "rawModeData": ""
+        },
+        {
+            "id": "eb3b33759ff1ca2b62592cdfc19303c8",
+            "name": "Fetch the paginated list of shipwrecks.",
+            "url": "http:\/\/api.vic.gov.au:443\/vhd\/1.0\/shipwrecks",
+            "description": "",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "rpp",
+                    "description": "Records per page (default 25). Change the number of records per page.\n\n**Example:**\n- `\/shipwrecks?rpp=10`\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "kw",
+                    "description": "Keyword search\n\n**Example:**\n- `\/autocomplete?kw=ag`\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "kwt",
+                    "description": "Keyword search typ. Used conjunction with keyword search to define the search as either one(at least one of the words), all(all words, any order) or exact(exact match).\n\n**Example:**\n- `\/shipwrecks?kw=some+keywords&kwt=one`\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "kwe",
+                    "description": "Words to exclude from keyword search.\n\n**Example:**\n- `\/shipwrecks?kw=some+keywords&kwe=words+to+exclude`\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "nme",
+                    "description": "Ship name, case insensitive.\n\n**Example:**\n- `\/shipwrecks?nme=agnes`\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "num",
+                    "description": "Official ship number.\n\n**Example:**\n- `\/shipwrecks?num=152168`\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "ll",
+                    "description": "Location lost.\n\n**Example:**\n- `\/shipwrecks?ll=port+arthur`\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "yb_min",
+                    "description": "Year built minimum, use in conjunction with yb_max to form a range.\n\n**Example:**\n- `\/shipwrecks?yb_min=1885`\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "yb_max",
+                    "description": "Year built maximum, use in conjunction with yb_min to form a range.\n\n**Example:**\n- `\/shipwrecks?yb_max=1910`\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "yl_min",
+                    "description": "Year lost minimum, use in conjunction with yl_max to form a range.\n\n**Example:**\n- `\/shipwrecks?yl_min=1885`\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "yl_max",
+                    "description": "Year lost maximum, use in conjunction with yl_min to form a range.\n\n**Example:**\n- `\/shipwrecks?yl_max=1910`\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "dpp",
+                    "description": "Departure port.\n\n**Example:**\n- `\/shipwrecks?dpp=sydney`\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "dsp",
+                    "description": "Destination port.\n\n**Example:**\n- `\/shipwrecks?dsp=melbourne`\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "pc",
+                    "description": "Passenger and crew names.\n\n**Example:**\n- `\/shipwrecks?pc=McMillen`\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "cgo",
+                    "description": "Cargo description.\n\n**Example:**\n- `\/shipwrecks?cgo=timber`\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "plb",
+                    "description": "Place the ship was built.\n\n**Example:**\n- `\/shipwrecks?plb=hobart+tasmania`\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "plr",
+                    "description": "Place the ship was registered.\n\n**Example:**\n- `\/shipwrecks?plr=hobart+tasmania`\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "pro",
+                    "description": "Propulsion type. Numerical ID. The ID's and names of propulsion types can be retrieved from the \/ship-propulsions API endpoint.\n\n**Example:**\n- `\/shipwrecks?pro=3`\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "rig",
+                    "description": "Rig. Numerical ID. The ID's and names of rig types can be retrieved from the \/ship-rigs API endpoint.\n\n**Example:**\n- `\/shipwrecks?rig=3`\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "vup",
+                    "description": "Primary vessel usage. Numerical ID. The ID's and names of options can be retrieved from the \/ship-primary-uses API endpoint.\n\n**Example:**\n- `\/shipwrecks?vup=2`\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "vus",
+                    "description": "Secondary vessel usage. Numerical ID. The ID's and names of options can be retrieved from the \/ship-secondary-uses API endpoint.\n\n**Example:**\n- `\/shipwrecks?vus=4`\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "cm",
+                    "description": "Construction material. Numerical ID. The ID's and names of options can be retrieved from the \/ship-construction-materials API endpoint.\n\n**Example:**\n- `\/shipwrecks?cm=2`\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "pco",
+                    "description": "Period the ship was constructed. Numerical ID. The ID's and year ranges can be retrieved from the \/ship-periods-built API endpoint.\n\n**Example:**\n- `\/shipwrecks?pco=3`\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "pl",
+                    "description": "Period the ship was lost. Numerical ID. The ID's and year ranges can be retrieved from the \/ship-periods-lost API endpoint.\n\n**Example:**\n- `\/shipwrecks?pl=2`\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "sort",
+                    "description": "Sort results by name ascending or name descending (az or za). Send empty sort value to reset to default relevance sorting.\n\n**Example:**\n- `\/shipwrecks?sort=az`\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "5eec6694047f986460fcce2d8c4438c8",
+            "rawModeData": ""
+        },
+        {
+            "id": "a464683000dd0f6d10c5a284cd63998f",
+            "name": "Fetch the list of available municipalities.",
+            "url": "http:\/\/api.vic.gov.au:443\/vhd\/1.0\/municipalities",
+            "description": "",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "5eec6694047f986460fcce2d8c4438c8",
+            "rawModeData": ""
+        },
+        {
+            "id": "e36ed0922b70fe6a100ff956c8391cf7",
+            "name": "Get the list of sub-themes for a given primary theme.",
+            "url": "http:\/\/api.vic.gov.au:443\/vhd\/1.0\/themes\/{themes_id}",
+            "description": "",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "themes_id",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "5eec6694047f986460fcce2d8c4438c8",
+            "rawModeData": ""
+        },
+        {
+            "id": "75df0ad02f810291d85ef61251c77c3c",
+            "name": "Get the list of available rig types",
+            "url": "http:\/\/api.vic.gov.au:443\/vhd\/1.0\/ship-rigs",
+            "description": "",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "5eec6694047f986460fcce2d8c4438c8",
+            "rawModeData": ""
+        },
+        {
+            "id": "429b5c316d277f4013cd90042d9cab9c",
+            "name": "Get the complete list of architectural styles",
+            "url": "http:\/\/api.vic.gov.au:443\/vhd\/1.0\/architectural-styles",
+            "description": "",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "5eec6694047f986460fcce2d8c4438c8",
+            "rawModeData": ""
+        },
+        {
+            "id": "41be534ef68aaada01c767a03e3d282d",
+            "name": "Get the list of secondary uses for shipwrecks",
+            "url": "http:\/\/api.vic.gov.au:443\/vhd\/1.0\/ship-secondary-uses",
+            "description": "",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "5eec6694047f986460fcce2d8c4438c8",
+            "rawModeData": ""
+        },
+        {
+            "id": "ceb13cae4403b43960131888ef2eb758",
+            "name": "Retrieve paginated collection of VHD places.",
+            "url": "http:\/\/api.vic.gov.au:443\/vhd\/1.0\/places",
+            "description": "",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "rpp",
+                    "description": "Records per page (default 25). Change the number of records per page.\n\n**Example:**\n- `\/shipwrecks?rpp=10`\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "kw",
+                    "description": "Keyword search\n\n**Example:**\n- `\/autocomplete?kw=ag`\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "kwt",
+                    "description": "Keyword search typ. Used conjunction with keyword search to define the search as either one(at least one of the words), all(all words, any order) or exact(exact match).\n\n**Example:**\n- `\/shipwrecks?kw=some+keywords&kwt=one`\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "kwe",
+                    "description": "Words to exclude from keyword search.\n\n**Example:**\n- `\/shipwrecks?kw=some+keywords&kwe=words+to+exclude`\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "aut",
+                    "description": "Heritage authority. Numerical ID. The ID's and names of heritage authorities can be retrieved from the \/heritage-authorities API endpoint.\n\n**Example:**\n- `\/places?aut=2`\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "sub",
+                    "description": "Suburb.\n\n**Example:**\n- `\/places?sub=glenlyon`\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "str",
+                    "description": "Street.\n\n**Example:**\n- `\/places?str=brunswick+street`\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "mun",
+                    "description": "Municipality. Numerical ID. The ID's and names of municipalities can be retrieved from the \/municipalities API endpoint.\n\n**Example:**\n- `\/places?mun=4`\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "pos",
+                    "description": "Postcode.\n\n**Example:**\n- `\/places?pos=3056`\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "add",
+                    "description": "Municipality. Numerical ID. The ID's and names of municipalities can be retrieved from the \/municipalities API endpoint.\n\n**Example:**\n- `\/places?add=39+nicholson+street+abbotsford+yarra_city`\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "arc",
+                    "description": "Architect.\n\n**Example:**\n- `\/places?arc=davidson`\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "arcs",
+                    "description": "Architectural Style. Numerical ID. The ID's and names of architectural styles can be retrieved from the \/architectural-styles API endpoint.\n\n**Example:**\n- `\/places?arcs=3`\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "yc_min",
+                    "description": "Year of construction minimum. Use in conjunction with yc_max to form a range.\n\n**Example:**\n- `\/places?yc_min=1890`\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "yc_max",
+                    "description": "Year of construction maximum. Use in conjunction with yc_min to form a range.\n\n**Example:**\n- `\/places?yc_max=1920`\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "tp",
+                    "description": "Primary theme. Numerical ID. The ID's and names of themes can be retrieved from the \/themes API endpoint.\n\n**Example:**\n- `\/places?tp=2`\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "ts",
+                    "description": "Secondary theme. Numerical ID. The ID's and names of secondary themes are a property of individual primary themes and can be fetched at the \/themes\/<theme_id> API endpoint.\n\n**Example:**\n- `\/places?ts=4`\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "cp",
+                    "description": "Primary category. Numerical ID. The ID's and names of primary categories can be retrieved from the \/categories API endpoint.\n\n**Example:**\n- `\/places?cp=4`\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "cs",
+                    "description": "Secondary category. Numerical ID. The ID's and names of secondary categories are a property of individual primary categories and can be fetched at the \/categories\/<category_id> API endpoint.\n\n**Example:**\n- `\/places?cs=2`\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "cat",
+                    "description": "Heritage act categories. Numerical ID. The ID's and names of heritage act categories can be retrieved from the \/heritage-act-categories API endpoint.\n\n**Example:**\n- `\/places?cat=3`\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "per",
+                    "description": "Time period. Numerical ID. The ID's and year ranges of time periods can be retrieved from the \/periods API endpoint.\n\n**Example:**\n- `\/places?per=4`\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "nme",
+                    "description": "Ship name, case insensitive.\n\n**Example:**\n- `\/shipwrecks?nme=agnes`\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "nmf",
+                    "description": "Former name.\n\n**Example:**\n- `\/places?nmf=the+grange`\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "his",
+                    "description": "History. Keyword search on the historical information of a place.\n\n**Example:**\n- `\/places?his=some+keywords`\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "idn",
+                    "description": "Unique numbers assigned to each place\/object e.g H0001 (VHR Number), H7121-0003 (Heritage Inventory No) or HO123. Local heritage places on the Heritage Overlay (HO) - use the prefix HO.\n\n**Example:**\n- `\/places?idn=H1522`\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "geo",
+                    "description": "Get all places within a given radius of a geographic location point. Format is lat,lon,distance.\n\n**Example:**\n- `\/places?geo=-37.803030,145.004620,1`\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "sort",
+                    "description": "Sort results by name ascending or name descending (az or za). Send empty sort value to reset to default relevance sorting.\n\n**Example:**\n- `\/shipwrecks?sort=az`\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "collapse",
+                    "description": "Occasionally places will have multiple records under different heritage authorities. Use this parameter to force records to be collapsed under a primary record or listed individually.\n\n**Example:**\n- `\/places?collapse=true`\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "5eec6694047f986460fcce2d8c4438c8",
+            "rawModeData": ""
+        },
+        {
+            "id": "33268f27f2f622d9a83ff3155db5f0da",
+            "name": "Get the list of available 5 year periods for date lost.",
+            "url": "http:\/\/api.vic.gov.au:443\/vhd\/1.0\/ship-periods-lost",
+            "description": "",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "5eec6694047f986460fcce2d8c4438c8",
+            "rawModeData": ""
+        }
+    ]
+}

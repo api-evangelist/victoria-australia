@@ -1,0 +1,507 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "2.1.0",
+        "title": "Datavic Open Data API",
+        "description": "The Victorian Government Data Directory (www.data.vic.gov.au) is a portal that helps you find datasets that exist in department and agencies systems. The data available via data.vic.gov.au has grown rapidly over the years and now contains approximately 7000 datasets from across the Victorian government. It is a significant resource for the Victorian open data community. \n\nThe data on DataVic can currently be accessed through the CKAN API by developers, however this API does not use the newly developed Whole of Victorian Government (WoVG) API Design Standards, a best-practise approach that will make it easier for developers integrate into their mobile applications and other systems.\n\nThis API is an upgrade to the CKAN API that implements the WoVG API Design Standards.\n\n\n# Getting Started\nIn order to use the API, consumers need an understanding of the structure of the entities. Each of these is available independently, but also through the following entity heirarchy:\n    \n  - Organisatio",
+        "termsOfService": "http:\/\/exmple.com\/license\/"
+    },
+    "servers": [
+        "http:\/\/api.vic.gov.au:443\/datavic\/opendata\/v1.1"
+    ],
+    "paths": {
+        "\/datasets\/{id}": {
+            "get": {
+                "summary": "Display of a single data container within the open data repository.",
+                "description": "Display of a single data container within the open data repository.\n",
+                "operationId": "GetDatasetsById",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK. <br \/> The request was successfully processed.\n",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/DatasetResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/organisations\/{id}": {
+            "get": {
+                "summary": "Retreive single organisation.",
+                "description": "Retreive single organisation within the open data repository.\n",
+                "operationId": "GetOrganisationsById",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK. <br \/> The request was successfully processed.\n",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/DatasetResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/datasets": {
+            "get": {
+                "summary": "List of all parent data containers within the open data repository.",
+                "description": "List of all parent data containers within the open data repository.\n",
+                "operationId": "GetDatasets",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "filter",
+                        "in": "query",
+                        "description": "comma seperated {key:value} format to specify fields and values to be used for querying the data. This is ageneric search criterion.\n"
+                    },
+                    {
+                        "name": "tagSearch",
+                        "in": "query",
+                        "description": "to return datasets with specified tag\n"
+                    },
+                    {
+                        "name": "keywordSearch",
+                        "in": "query",
+                        "description": "to return datasets containing the keyword in any level\n"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK. <br \/> The request was successfully processed.\n",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/DatasetResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/resources": {
+            "get": {
+                "summary": "List all Resources available in the Open Data Repository.",
+                "description": "List all Resources available in the Open Data Repository. At least one non-paginationatio query parameter should be propvided- at least one query parameter should be present.\n",
+                "operationId": "GetResources",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "url",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "resourceType",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "mimeType",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "order_by",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK. <br \/> The request was successfully processed.\n",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/DatasetResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/organisations": {
+            "get": {
+                "summary": "List Organisations contributed data to Open Data Repository.",
+                "description": "List Organisations contributed data to Open Data Repository.\n",
+                "operationId": "GetOrganisations",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK. <br \/> The request was successfully processed.\n",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/DatasetResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "DatasetResponse": {
+                "type": "object",
+                "properties": {
+                    "_meta": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "name": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "license_title": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "metadata_created": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "metadata_modified": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "title": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "tags": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "organisation": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "_embedded": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "_links": {
+                        "description": "",
+                        "type": "array"
+                    }
+                }
+            },
+            "_meta": {
+                "type": "object"
+            },
+            "tags": {
+                "type": "array"
+            },
+            "organisation": {
+                "type": "object"
+            },
+            "_embedded": {
+                "type": "object"
+            },
+            "_links": {
+                "type": "array"
+            },
+            "PaginationLinks": {
+                "type": "object",
+                "properties": {
+                    "_self": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "_prev": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "_next": {
+                        "description": "",
+                        "type": "string"
+                    }
+                }
+            },
+            "MetaModel": {
+                "type": "object",
+                "properties": {
+                    "processing_time": {
+                        "description": "The processing time for this request in human readable format.",
+                        "type": "string"
+                    },
+                    "processing_time_ms": {
+                        "description": "The processing time for this request in milliseconds.",
+                        "type": "integer"
+                    },
+                    "total_records": {
+                        "description": "Total number of the results which meets the search criteria regardless of the page and limit.",
+                        "type": "integer"
+                    },
+                    "page": {
+                        "description": "The current page for this collection request.",
+                        "type": "integer"
+                    },
+                    "limit": {
+                        "description": "The number of records per page.",
+                        "type": "integer"
+                    },
+                    "count": {
+                        "description": "Number of records in the current page",
+                        "type": "integer"
+                    }
+                }
+            },
+            "ResourceResponse": {
+                "type": "object",
+                "properties": {
+                    "format": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "dateCreated": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "mimeType": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "resource_type": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "_links": {
+                        "description": "",
+                        "type": "array"
+                    }
+                }
+            },
+            "DatasetListResponse": {
+                "type": "object",
+                "properties": {
+                    "MetaModel": {
+                        "description": "Meta object model",
+                        "type": "object"
+                    },
+                    "_meta": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "PaginationLinks": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "_links": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "datasets": {
+                        "description": "collection of results returned",
+                        "type": "array"
+                    }
+                }
+            },
+            "datasets": {
+                "type": "array"
+            },
+            "DatasetResponse__embedded": {
+                "type": "object",
+                "properties": {
+                    "count": {
+                        "description": "",
+                        "type": "number"
+                    },
+                    "resources": {
+                        "description": "",
+                        "type": "array"
+                    }
+                }
+            },
+            "resources": {
+                "type": "array"
+            },
+            "OrganisationListResponse": {
+                "type": "object",
+                "properties": {
+                    "MetaModel": {
+                        "description": "Meta object model",
+                        "type": "object"
+                    },
+                    "_meta": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "organisations": {
+                        "description": "",
+                        "type": "array"
+                    }
+                }
+            },
+            "organisations": {
+                "type": "array"
+            },
+            "Links": {
+                "type": "object",
+                "properties": {
+                    "rel": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "href": {
+                        "description": "",
+                        "type": "string"
+                    }
+                }
+            },
+            "OrganisationResponse": {
+                "type": "object",
+                "properties": {
+                    "display_name": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "title": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "MetaModel": {
+                        "description": "Meta object model",
+                        "type": "object"
+                    },
+                    "_meta": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "_links": {
+                        "description": "",
+                        "type": "array"
+                    }
+                }
+            },
+            "ResourceListResponse": {
+                "type": "object",
+                "properties": {
+                    "MetaModel": {
+                        "description": "Meta object model",
+                        "type": "object"
+                    },
+                    "_meta": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "PaginationLinks": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "_links": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "resources": {
+                        "description": "",
+                        "type": "array"
+                    }
+                }
+            },
+            "DatasetResponse_organisation": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "_link": {
+                        "description": "",
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}

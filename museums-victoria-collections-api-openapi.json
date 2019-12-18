@@ -1,0 +1,1797 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "Museums Victoria Collections API",
+        "description": "This API allows users to explore the natural sciences and humanities collections of Museums Victoria in Australia, featuring collections of zoology, geology, palaeontology, history, indigenous cultures and technology. Over 1.15 million records were presented at launch in 2015, accompanied by over 150,000 images.\n\n\n# Getting Started\nIn order to use the API, consumers need an understanding of the structure of the entities. Each of these is available independently, but also through a combined search function with numerous filter parameters.\n    - Articles\n    - Items\n    - Species\n    - Specimens\n    \n  Or the common function: \/Search\n\n# Authentication & Rate Limits\nThis API requires an API Key that can be generated using the Developer.Vic portal.  A sample key is also provided for getting started quickly.\n\nThe service is rate limited at 30 API calls per minute.\n\nUsers may request an increase to their limit through the Developer.Vic portal.\n\n\n# Terms of Use, Copyright and Attribution\nWe w",
+        "termsOfService": "http:\/\/exmple.com\/license\/"
+    },
+    "servers": [
+        "http:\/\/api.vic.gov.au:443\/museumvictoria\/v1.0\/collections"
+    ],
+    "paths": {
+        "\/items": {
+            "get": {
+                "summary": "Returns a list of items.",
+                "description": "",
+                "operationId": "GetItems",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "A list of items were returned successfully.",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/SearchResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/specimens": {
+            "get": {
+                "summary": "Returns a bunch of specimens.",
+                "description": "",
+                "operationId": "GetSpecimens",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "A list of items were returned successfully.",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/SearchResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/articles\/{articleId}": {
+            "get": {
+                "summary": "Returns a single article by ID.",
+                "description": "",
+                "operationId": "GetArticleByID",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "articleId",
+                        "in": "path",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A list of items were returned successfully.",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/SearchResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/specimens\/{specimenId}": {
+            "get": {
+                "summary": "Returns a single specimen by Id.",
+                "description": "",
+                "operationId": "GetSpecimenByID",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "specimenId",
+                        "in": "path",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A list of items were returned successfully.",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/SearchResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/items\/{itemId}": {
+            "get": {
+                "summary": "Returns a single item by ID.",
+                "description": "",
+                "operationId": "GetItemByID",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "itemId",
+                        "in": "path",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A list of items were returned successfully.",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/SearchResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/species\/{speciesId}": {
+            "get": {
+                "summary": "Returns a single species by Id.",
+                "description": "",
+                "operationId": "GetSpeciesByID",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "speciesId",
+                        "in": "path",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A list of items were returned successfully.",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/SearchResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/search": {
+            "get": {
+                "summary": "Searches through the collection",
+                "description": "",
+                "operationId": "SearchCollection",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "query",
+                        "in": "query",
+                        "description": "Specify a search term. Can contain one or more values. In order to add more terms repeat the query parameter as follows \"query=coin&amp;query=india\"\n\n**Example values:**\n- coin\n- india\n"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "description": "The order in which to sort return results. Regardless of the value used the direction of the order is always descending. Default value is relevance if the query parameter is present, otherwise quality is used as the default value.\n\n**Valid values:**\n- quality - The quality of the record based on how many fields and images a record may have.\n- relevance - The relevance of the record based on the search query. Only valid if the query parameter is used.\n- date - The date the record was last modifie"
+                    },
+                    {
+                        "name": "mindatemodified",
+                        "in": "query",
+                        "description": "Minimum date a record was modified in ISO 8601 UTC format. Records with a modified date greater than or equal to this value will be returned.\n\n**Example:**\n- 2014-06-21T12:00:00Z\n"
+                    },
+                    {
+                        "name": "maxdatemodified",
+                        "in": "query",
+                        "description": "Maximum date a record was modified in ISO 8601 UTC format. Records with a modified date less than or equal to this value will be returned.\n\n**Example:**\n- 2014-06-21T12:00:00Z\n"
+                    },
+                    {
+                        "name": "hasimages",
+                        "in": "query",
+                        "description": "Specify whether or not the returned records contain images. Parameter is considered a facet.\n\n**Valid values:**\n- yes\n- no\n"
+                    },
+                    {
+                        "name": "ondisplay",
+                        "in": "query",
+                        "description": "Specify whether or not the returned records are on display. Parameter is considered a facet.\n\n**Valid values:**\n- yes\n- no\n"
+                    },
+                    {
+                        "name": "recordtype",
+                        "in": "query",
+                        "description": "Type of record to return. Parameter is considered a facet.\n\n**Example values:**\n- article\n- item\n- species\n- specimen\n"
+                    },
+                    {
+                        "name": "category",
+                        "in": "query",
+                        "description": "Collection category of a record. Parameter is considered a facet.\n\n**Example values:**\n- natural sciences\n- indigenous collections\n"
+                    },
+                    {
+                        "name": "collectingarea",
+                        "in": "query",
+                        "description": "Collecting area of a record. Can contain one or more values. In order to add more terms repeat the query parameter as follows \"collectingarea=ornithology&amp;collectingarea=mammalogy\". Parameter is considered a facet.\n\n**Example values:**\n- ornithology\n- mammalogy\n"
+                    },
+                    {
+                        "name": "specimenscientificgroup",
+                        "in": "query",
+                        "description": "Specimen scientific group of a record, will only return specimen records. Parameter is considered a facet.\n\n**Example values:**\n- geology\n- invertebrate zoology\n"
+                    },
+                    {
+                        "name": "itemtype",
+                        "in": "query",
+                        "description": "The general type of specimen or item, will only return specimen or item records. Parameter is considered a facet.\n\n**Example values:**\n- object\n- specimen\n"
+                    },
+                    {
+                        "name": "speciestype",
+                        "in": "query",
+                        "description": "The broad category a species may be considered to belong to, will only return species records. Parameter is considered a facet.\n\n**Example values:**\n- snakes\n- birds\n"
+                    },
+                    {
+                        "name": "imagelicence",
+                        "in": "query",
+                        "description": "The open access licences that are attributed to a records images. Can contain one or more values. In order to add more terms repeat the query parameter as follows \"imagelicence=public+domain&amp;imagelicence=cc+by\". Parameter is considered a facet.\n\n**Example values:**\n- public domain\n- cc by\n"
+                    },
+                    {
+                        "name": "articletype",
+                        "in": "query",
+                        "description": "The type of article, will only return article records. Can contain one or more values. In order to add more terms repeat the query parameter as follows \"articletype=party&amp;articletype=physical+object\". Parameter is considered a facet.\n\n**Example values:**\n- party\n- physical object\n"
+                    },
+                    {
+                        "name": "displaylocation",
+                        "in": "query",
+                        "description": "The display location at Museums Victoria venues for the record, will only return item or specimen records. Parameter is considered a facet.\n\n**Example values:**\n- melbourne museum\n- scienceworks\n"
+                    },
+                    {
+                        "name": "keyword",
+                        "in": "query",
+                        "description": "The keywords generally used to describe the record, sorta like tags. Keywords can come from a variety of other fields on records, for example:\n\n**articles:**\n- keywords\n\n**items:**\n- keywords\n- audioVisualRecordingDetails\n- modelNames\n- archeologyActivity\n- archeologySpecificActivity\n- archeologyDecoration\n- numismaticsSeries\n- tradeLiteraturePrimarySubject\n- tradeLiteraturePublicationTypes\n- brands\n\n**species:**\n- conservationStatuses\n- animalSubType\n\n**specimens:**\n- keywords\n- expeditionNameE"
+                    },
+                    {
+                        "name": "locality",
+                        "in": "query",
+                        "description": "The general locality a record may be associated with. Locality can come from a variety of other fields on records , for example:\n\n**articles:**\n- localities\n\n**items:**\n- locality\n- region\n- state\n- country\n- indigenousCulturesLocalities\n\n**species:**\n- nationalParks\n\n**specimens:**\n- locality\n- region\n- state\n- country\n- ocean\n- continent\n- district\n- town\n- nearestNamedPlace\n- tektitesLocalStrewnfield\n- tektitesGlobalStrewnfield\n\n**Example Values:**\n- barossa valley\n- germany\n"
+                    },
+                    {
+                        "name": "collection",
+                        "in": "query",
+                        "description": "The museum collection a record belongs to, will only return item or specimen records. Collection can come from a variety of other fields on records, for example:\n\n**items:**\n- collectionNames\n- discipline\n\n**specimens:**\n- collectionNames\n- discipline\n\n**Example Values:**\n- spencer collection\n- royal exhibition building collection\n"
+                    },
+                    {
+                        "name": "date",
+                        "in": "query",
+                        "description": "The general date a record may be associated with, due to the variation in the way date is cataloged the string must be an exact match and is not parsed into a standardised date format, will only return item or specimen records. Collection can come from a variety of other fields on records, for example:\n\n**items:**\n- date\n- indigenousCulturesDate\n- indigenousCulturesDateCollected\n- archeologyManufactureDate\n- philatelyDateIssued\n- tradeLiteraturePublicationDate\n\n**specimens:**\n- date\n\n**Example V"
+                    },
+                    {
+                        "name": "culturalgroup",
+                        "in": "query",
+                        "description": "The indigenous cultures cultural group a record may be associated with, will only return item records.\n\n**Example Values:**\n- woi wurrung\n- barapa barapa\n"
+                    },
+                    {
+                        "name": "classification",
+                        "in": "query",
+                        "description": "The museum classification a record may belong to, will only return item and specimen records.\n\n**Example Values:**\n- boring apparatus\n- dust collecting equipment\n"
+                    },
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "A person or companies name a record may be associated with. Name can come from a variety of other fields on records, for example:\n\n**articles:**\n- author.fullName\n\n**items:**\n- association.name\n- indigenousCulturesPhotographer\n- indigenousCulturesAuthor\n- indigenousCulturesIllustrator\n- indigenousCulturesMaker\n- indigenousCulturesCollector\n- indigenousCulturesLetterTo\n- indigenousCulturesLetterFrom\n- brand.name\n- archeologyManufactureName\n- tradeLiteraturePrimaryName\n- artworkPublisher\n\n**specie"
+                    },
+                    {
+                        "name": "technique",
+                        "in": "query",
+                        "description": "The archeology technique used to create an object, will only return item records.\n\n**Example Values:**\n- caved bone\n- machine-made\n"
+                    },
+                    {
+                        "name": "denomination",
+                        "in": "query",
+                        "description": "The numismatics denomination of a record, will only return item records.\n\n**Example Values:**\n- half crown\n- obol\n"
+                    },
+                    {
+                        "name": "habitat",
+                        "in": "query",
+                        "description": "The habitat or whereToLook a species lives in, will only return species records.\n\n**Example Values:**\n- woodland\n- seagrass meadows\n"
+                    },
+                    {
+                        "name": "taxon",
+                        "in": "query",
+                        "description": "The taxonName, kingdom, phylum, subphylum, superclass, class, subclass, superorder, order, suborder, infraorder, superfamily, family, subfamily, commonName, otherCommonNames an item, species or specimen may belong to.\n\n**Example Values:**\n- mammalia\n- Ornithorhynchus anatinus\n"
+                    },
+                    {
+                        "name": "typestatus",
+                        "in": "query",
+                        "description": "The type status of a specimen, will only return specimen records.\n\n**Example Values:**\n- holotype\n- paratype\n"
+                    },
+                    {
+                        "name": "geotype",
+                        "in": "query",
+                        "description": "The petrologyRockClass, petrologyRockGroup, mineralogyVariety, mineralogyGroup, mineralogyClass, meteoritesClass, meteoritesGroup, tektitesClassification, mineralogySpecies a specimen may belong to.\n\n**Example Values:**\n- agate\n- copper\n"
+                    },
+                    {
+                        "name": "museumlocation",
+                        "in": "query",
+                        "description": "The gallery or venue a record may be on display at one of Museums Victoria's venues, will only return item and specimen records.\n\n**Example Values:**\n- immigration museum\n- bunjilaka - first peoples\n"
+                    },
+                    {
+                        "name": "article",
+                        "in": "query",
+                        "description": "The title of an article a record may be associated with, will only return article, item and specimen records.\n\n**Example Values:**\n- arms collection\n- csirac games - a summary\n"
+                    },
+                    {
+                        "name": "speciesendemicity",
+                        "in": "query",
+                        "description": "The endemicity of a species, will only return species records.\n\n**Example Values:**\n- introduced pest\n- native to australia\n"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A list of items were returned successfully.",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/SearchResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/species": {
+            "get": {
+                "summary": "Returns a list of species.",
+                "description": "",
+                "operationId": "GetSpecies",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "A list of items were returned successfully.",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/SearchResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/articles": {
+            "get": {
+                "summary": "Returns a list of articles.",
+                "description": "",
+                "operationId": "GetArticles",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "A list of items were returned successfully.",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/SearchResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "SpecimenResponseItem": {
+                "type": "object",
+                "properties": {
+                    "recordType": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "licence": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "dateModified": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "displayTitle": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "category": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "scientificGroup": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "discipline": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "registrationNumber": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "collectionNames": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "localities": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "type": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "classifications": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "objectName": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "objectSummary": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "isdDescriptionOfContent": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "significance": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "keywords": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "collectingAreas": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "associations": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "relatedItemIds": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "relatedSpecimenIds": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "relatedArticleIds": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "relatedSpeciesIds": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "acquisitionInformation": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "acknowledgement": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "museumLocation": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "numberOfSpecimens": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "clutchSize": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "sex": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "stageOrAge": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "storages": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "typeStatus": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "identifiedBy": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "dateIdentified": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "qualifier": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "qualifierRank": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "taxonomy": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "collectionEvent": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "collectionSite": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "palaeontologyDateCollectedFrom": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "palaeontologyDateCollectedTo": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "mineralogySpecies": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "mineralogyVariety": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "mineralogyGroup": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "mineralogyClass": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "mineralogyAssociatedMatrix": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "mineralogyType": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "mineralogyTypeOfType": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "meteoritesName": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "meteoritesClass": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "meteoritesGroup": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "meteoritesType": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "meteoritesMinerals": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "meteoritesSpecimenWeight": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "meteoritesTotalWeight": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "meteoritesDateFell": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "meteoritesDateFound": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "tektitesName": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "tektitesClassification": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "tektitesShape": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "tektitesLocalStrewnfield": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "tektitesGlobalStrewnfield": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "petrologyRockClass": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "petrologyRockGroup": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "petrologyRockName": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "petrologyRockDescription": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "petrologyMineralsPresent": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "media": {
+                        "description": "",
+                        "type": "array"
+                    }
+                }
+            },
+            "licence": {
+                "type": "object"
+            },
+            "collectionNames": {
+                "type": "array"
+            },
+            "localities": {
+                "type": "array"
+            },
+            "classifications": {
+                "type": "array"
+            },
+            "keywords": {
+                "type": "array"
+            },
+            "collectingAreas": {
+                "type": "array"
+            },
+            "associations": {
+                "type": "array"
+            },
+            "relatedItemIds": {
+                "type": "array"
+            },
+            "relatedSpecimenIds": {
+                "type": "array"
+            },
+            "relatedArticleIds": {
+                "type": "array"
+            },
+            "relatedSpeciesIds": {
+                "type": "array"
+            },
+            "storages": {
+                "type": "array"
+            },
+            "taxonomy": {
+                "type": "array"
+            },
+            "collectionEvent": {
+                "type": "object"
+            },
+            "collectionSite": {
+                "type": "object"
+            },
+            "media": {
+                "type": "array"
+            },
+            "ArticleResponse": {
+                "type": "object"
+            },
+            "SearchResponseItem": {
+                "type": "object",
+                "properties": {
+                    "recordType": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "comments": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "licence": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "dateModified": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "displayTitle": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "category": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "discipline": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "type": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "registrationNumber": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "collectionNames": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "collectionAreas": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "classifications": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "objectName": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "objectSummary": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "physicalDescription": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "inscription": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "associations": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "keywords": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "significance": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "modelScale": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "shape": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "dimensions": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "references": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "bibliographies": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "brands": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "relatedItemIds": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "relatedSpecimenIds": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "relatedArticleIds": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "relatedSpeciesIds": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "acquisitionInformation": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "acknowledgement": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "museumLocation": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "archeologyContextNumber": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "archeologySite": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "archeologyDescription": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "archeologyDistinguishingMarks": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "archeologyActivity": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "archeologySpecificActivity": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "archeologyDecoration": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "archeologyPattern": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "archeologyColour": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "archeologyMoulding": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "archeologyPlacement": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "archeologyForm": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "archeologyShape": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "archeologyManufactureName": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "archeologyManufactureDate": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "archeologyTechnique": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "archeologyProvenance": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "numismaticsDenomination": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "numismaticsDateIssued": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "numismaticsSeries": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "numismaticsMaterial": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "numismaticsAxis": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "numismaticsEdgeDescription": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "numismaticsObverseDescription": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "numismaticsReverseDescription": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "philatelyColour": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "philatelyDenomination": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "philatelyImprint": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "philatelyIssue": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "philatelyDateIssued": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "philatelyForm": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "philatelyOverprint": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "philatelyGibbonsNumber": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "isdFormat": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "isdLanguage": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "isdDescriptionOfContent": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "isdPeopleDepicted": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "audioVisualRecordingDetails": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "audioVisualContentSummaries": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "tradeLiteratureNumberofPages": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "tradeLiteraturePageSizeFormat": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "tradeLiteratureCoverTitle": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "tradeLiteraturePrimarySubject": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "tradeLiteraturePublicationDate": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "tradeLiteratureIllustrationTypes": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "tradeLiteraturePrintingTypes": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "tradeLiteraturePublicationTypes": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "tradeLiteraturePrimaryRole": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "tradeLiteraturePrimaryName": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "indigenousCulturesLocalities": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "indigenousCulturesCulturalGroups": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "indigenousCulturesMedium": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "indigenousCulturesDescription": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "indigenousCulturesLocalName": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "indigenousCulturesPhotographer": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "indigenousCulturesAuthor": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "indigenousCulturesIllustrator": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "indigenousCulturesMaker": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "indigenousCulturesDate": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "indigenousCulturesCollector": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "indigenousCulturesDateCollected": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "indigenousCulturesIndividualsIdentified": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "indigenousCulturesTitle": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "indigenousCulturesSheets": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "indigenousCulturesPages": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "indigenousCulturesLetterTo": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "indigenousCulturesLetterFrom": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "artworkMedium": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "artworkTechnique": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "artworkSupport": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "artworkPlateNumber": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "artworkDrawingNumber": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "artworkState": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "artworkPublisher": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "artworkPrimaryInscriptions": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "artworkSecondaryInscriptions": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "artworkTertiaryInscriptions": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "typeStatus": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "identifiedBy": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "dateIdentified": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "qualifier": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "qualifierRank": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "taxonomy": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "media": {
+                        "description": "",
+                        "type": "array"
+                    }
+                }
+            },
+            "comments": {
+                "type": "array"
+            },
+            "collectionAreas": {
+                "type": "array"
+            },
+            "dimensions": {
+                "type": "array"
+            },
+            "bibliographies": {
+                "type": "array"
+            },
+            "brands": {
+                "type": "array"
+            },
+            "ArticleResponseItem": {
+                "type": "object",
+                "properties": {
+                    "recordType": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "licence": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "dateModified": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "title": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "displayTitle": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "keywords": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "localities": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "content": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "contentSummary": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "types": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "authors": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "contributors": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "yearWritten": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "parentArticleId": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "childArticleIds": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "relatedArticleIds": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "relatedItemIds": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "relatedSpecimenIds": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "id": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "media": {
+                        "description": "",
+                        "type": "array"
+                    }
+                }
+            },
+            "types": {
+                "type": "array"
+            },
+            "authors": {
+                "type": "array"
+            },
+            "contributors": {
+                "type": "array"
+            },
+            "childArticleIds": {
+                "type": "array"
+            },
+            "SpeciesResponseItem": {
+                "type": "object",
+                "properties": {
+                    "recordType": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "licence": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "dateModified": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "displayTitle": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "category": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "discipline": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "type": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "registrationNumber": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "collectionNames": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "collectingAreas": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "classifications": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "objectSummary": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "physicalDescription": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "inscription": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "associations": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "keywords": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "significance": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "modelScale": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "shape": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "dimensions": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "references": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "bibliographies": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "modelNames": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "brands": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "relatedItemIds": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "relatedSpecimenIds": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "relatedArticleIds": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "relatedSpeciesIds": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "acquisitionInformation": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "acknowledgement": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "museumLocation": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "archeologyContextNumber": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "archeologySite": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "archeologyDescription": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "archeologyDistinguishingMarks": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "archeologyActivity": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "archeologySpecificActivity": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "archeologyDecoration": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "archeologyPattern": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "archeologyColour": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "archeologyMoulding": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "archeologyPlacement": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "archeologyForm": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "archeologyShape": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "archeologyManufactureName": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "archeologyManufactureDate": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "archeologyTechnique": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "archeologyProvenance": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "numismaticsDenomination": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "numismaticsDateIssued": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "numismaticsSeries": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "numismaticsMaterial": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "numismaticsAxis": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "numismaticsEdgeDescription": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "numismaticsObverseDescription": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "numismaticsReverseDescription": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "philatelyColour": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "philatelyDenomination": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "philatelyImprint": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "philatelyIssue": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "philatelyDateIssued": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "philatelyForm": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "philatelyOverprint": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "philatelyGibbonsNumber": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "isdFormat": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "isdLanguage": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "isdDescriptionOfContent": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "isdPeopleDepicted": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "audioVisualRecordingDetails": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "audioVisualContentSummaries": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "tradeLiteratureNumberofPages": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "tradeLiteraturePageSizeFormat": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "tradeLiteratureCoverTitle": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "tradeLiteraturePrimarySubject": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "tradeLiteraturePublicationDate": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "tradeLiteratureIllustrationTypes": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "tradeLiteraturePrintingTypes": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "tradeLiteraturePublicationTypes": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "tradeLiteraturePrimaryRole": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "tradeLiteraturePrimaryName": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "indigenousCulturesLocalities": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "indigenousCulturesCulturalGroups": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "indigenousCulturesMedium": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "indigenousCulturesDescription": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "indigenousCulturesLocalName": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "indigenousCulturesPhotographer": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "indigenousCulturesAuthor": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "indigenousCulturesIllustrator": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "indigenousCulturesMaker": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "indigenousCulturesDate": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "indigenousCulturesCollector": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "indigenousCulturesDateCollected": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "indigenousCulturesIndividualsIdentified": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "indigenousCulturesTitle": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "indigenousCulturesSheets": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "indigenousCulturesPages": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "indigenousCulturesLetterTo": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "indigenousCulturesLetterFrom": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "artworkMedium": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "artworkTechnique": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "artworkSupport": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "artworkPlateNumber": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "artworkDrawingNumber": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "artworkState": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "artworkPublisher": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "artworkPrimaryInscriptions": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "artworkSecondaryInscriptions": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "artworkTertiaryInscriptions": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "typeStatus": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "identifiedBy": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "dateIdentified": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "qualifier": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "qualifierRank": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "taxonomy": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "media": {
+                        "description": "",
+                        "type": "array"
+                    }
+                }
+            },
+            "modelNames": {
+                "type": "array"
+            },
+            "SpeciesResponse": {
+                "type": "object"
+            },
+            "SpecimenResponse": {
+                "type": "object"
+            },
+            "SearchResponse": {
+                "type": "object"
+            },
+            "query": {
+                "type": "array"
+            },
+            "collectingarea": {
+                "type": "array"
+            },
+            "imagelicence": {
+                "type": "array"
+            },
+            "articletype": {
+                "type": "array"
+            }
+        }
+    }
+}

@@ -1,0 +1,1288 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "1.2.0",
+        "title": "DataVic CKAN API",
+        "description": "The [Victorian Government Open Data Directory](https:\/\/www.data.vic.gov.au) uses CKAN to surface thousands of datasets from across the Victorian Government.\n\nThis API is based on version 2.7.3 of the [CKAN API documentation](http:\/\/docs.ckan.org\/en\/ckan-2.7.3) and provides access to CKAN functionality for the purpose of integrating with other CKAN instances.  It can also be used as a data source for other applications to search and download the datasets provided by Data.Vic.\n\n# Getting Started\n\nThis API exposes the following entites:\n\n- Organizations \n- Packages\n- Resources\n- Datastores\n\nEach of these entities is documented in further detail below.\n\n## Organizations\nAn **Organization** is an entity within the system that owns various datasets.  Examples of Organizations within this repository are: \n\n- VicRoads\n- Ambulance Victoria\n- Arts Victoria\n\nYou can filter the list of Packages by an Organisation, or just interact with the list of Packages directly.\n\n## Packages\n**Packages** provi",
+        "termsOfService": "http:\/\/exmple.com\/license\/"
+    },
+    "servers": [
+        "http:\/\/api.vic.gov.au:443\/datavic\/v1.2"
+    ],
+    "paths": {
+        "\/group_show": {
+            "get": {
+                "summary": "Metadata about a specific group that has contributed data to the open data repository",
+                "description": "",
+                "operationId": "GETGroupShow",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "The ID of the Group that you wish to view."
+                    },
+                    {
+                        "name": "include_packages",
+                        "in": "query",
+                        "description": "Return Packages with the group, or just the group details."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/OrganizationShowModel"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/resource_show": {
+            "get": {
+                "summary": "Show a particular resource by ID",
+                "description": "",
+                "operationId": "GETResourceShow",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "The ID of the Group that you wish to view."
+                    },
+                    {
+                        "name": "include_tracking",
+                        "in": "query",
+                        "description": "add tracking information to dataset and resources"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/OrganizationShowModel"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/package_autocomplete": {
+            "get": {
+                "summary": "List of all Packages that match the given string.",
+                "description": "",
+                "operationId": "GETPackageAutocomplete",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "q",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/OrganizationShowModel"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/group_list": {
+            "get": {
+                "summary": "List of all Groups that exist in the Open Data repository.",
+                "description": "",
+                "operationId": "GETGroupList",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "description": "Default: \"name asc\" string of field name and sort-order. The allowed fields are \u2018name\u2019 and \u2018packages\u2019"
+                    },
+                    {
+                        "name": "groups",
+                        "in": "query",
+                        "description": "a list of names of the groups to return, if given only groups whose names are in this list will be returned (optional)"
+                    },
+                    {
+                        "name": "all_fields",
+                        "in": "query",
+                        "description": "return group dictionaries instead of just names. Only core fields are returned. Returning a list of Packages is too expensive, so the Packages property for each group is deprecated, but there is a count of the Packages in the Package_count property. (optional, values: true or blank). False will still return full sets, use blank for just names."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/OrganizationShowModel"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/package_show": {
+            "get": {
+                "summary": "Display of a single data container within the open data repository.",
+                "description": "",
+                "operationId": "GETPackageShow",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "The ID of the Group that you wish to view."
+                    },
+                    {
+                        "name": "callback",
+                        "in": "query",
+                        "description": "JSONP function wrapper for the response.  Use this if you are calling the API inline from your browser."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/OrganizationShowModel"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/recently_changed_packages_activity_list": {
+            "get": {
+                "summary": "Returns a list of the recently changed Packages",
+                "description": "",
+                "operationId": "GETRecentlyChangedPackagesActivityList",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/OrganizationShowModel"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/group_package_show": {
+            "get": {
+                "summary": "Show the list of Packages that are within a group",
+                "description": "",
+                "operationId": "GETGroupPackageShow",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "The ID of the Group that you wish to view."
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/OrganizationShowModel"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/datastore_search": {
+            "get": {
+                "summary": "Search functionality to perform inspection of a specified supported resource file. Note: Support is limited to CSV files.",
+                "description": "",
+                "operationId": "GETDatastoreSearch",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "resource_id",
+                        "in": "query",
+                        "description": "The ID of the resource that you want to retrieve\/query."
+                    },
+                    {
+                        "name": "filters",
+                        "in": "query",
+                        "description": "A dictionary containing the list of filters that you want to apply to the retrieved resource."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "description": "A list of fields to return from the resource."
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "description": "Default: \"name asc\" string of field name and sort-order. The allowed fields are \u2018name\u2019 and \u2018packages\u2019"
+                    },
+                    {
+                        "name": "q",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "language",
+                        "in": "query",
+                        "description": "The language of the text query in the q parameter"
+                    },
+                    {
+                        "name": "plain",
+                        "in": "query",
+                        "description": "treat as plain text query (optional, default: true)"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/OrganizationShowModel"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/package_list": {
+            "get": {
+                "summary": "List of all parent data containers within the open data repository.",
+                "description": "",
+                "operationId": "GETPackageList",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/OrganizationShowModel"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/package_search": {
+            "get": {
+                "summary": "Search functionality across all data containers within the open data repository.",
+                "description": "",
+                "operationId": "GETPackageSearch",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "q",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "fq",
+                        "in": "query",
+                        "description": "any filter queries to apply. Note: +site_id:{ckan_site_id} is added to this string prior to the query being executed."
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "description": "Default: \"name asc\" string of field name and sort-order. The allowed fields are \u2018name\u2019 and \u2018packages\u2019"
+                    },
+                    {
+                        "name": "rows",
+                        "in": "query",
+                        "description": "the number of matching rows to return. There is a hard limit of 1000 Packages per query."
+                    },
+                    {
+                        "name": "start",
+                        "in": "query",
+                        "description": "the offset in the complete result for where the set of returned Packages should begin."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/OrganizationShowModel"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/current_package_list_with_resources": {
+            "get": {
+                "summary": "List of all parent data containers within the open data repository and their nested resources.",
+                "description": "",
+                "operationId": "GETCurrentPackageListWithResources",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/OrganizationShowModel"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/resource_search": {
+            "get": {
+                "summary": "Search functionality across all resources in the open data repository.",
+                "description": "",
+                "operationId": "GETResourceSearch",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "query",
+                        "in": "query",
+                        "description": "The \u2018query\u2019 parameter is a required field. It is a string of the form {field}:{term} or a list of strings, each of the same form. Within each string, {field} is a field or extra field on the Resource domain object."
+                    },
+                    {
+                        "name": "order_by",
+                        "in": "query",
+                        "description": "A field on the Resource model that orders the results."
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/OrganizationShowModel"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/organization_show": {
+            "get": {
+                "summary": "Metadata about a specific organization that has contributed data to the open data repository",
+                "description": "",
+                "operationId": "GETOrganizationShow",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "The ID of the Group that you wish to view."
+                    },
+                    {
+                        "name": "include_packages",
+                        "in": "query",
+                        "description": "Return Packages with the group, or just the group details."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/OrganizationShowModel"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/organization_list": {
+            "get": {
+                "summary": "List of all Organizations that have contributed data to the Open Data repository.",
+                "description": "",
+                "operationId": "GETOrganizationList",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "description": "Default: \"name asc\" string of field name and sort-order. The allowed fields are \u2018name\u2019 and \u2018packages\u2019"
+                    },
+                    {
+                        "name": "all_fields",
+                        "in": "query",
+                        "description": "return group dictionaries instead of just names. Only core fields are returned. Returning a list of Packages is too expensive, so the Packages property for each group is deprecated, but there is a count of the Packages in the Package_count property. (optional, values: true or blank). False will still return full sets, use blank for just names."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/OrganizationShowModel"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "PackageSearchResultModel": {
+                "type": "object",
+                "properties": {
+                    "license_title": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "maintainer": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "relationships_as_object": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "geo_data": {
+                        "description": "",
+                        "type": "number"
+                    },
+                    "citation": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "private": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "maintainer_email": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "revision_timestamp": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "extract": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "metadata_created": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "scale": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "metadata_modified": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "author": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "author_email": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "commentable": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "state": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "version": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "spatial": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "license_id": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "type": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "public": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "resources": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "accuracy": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "num_resources": {
+                        "description": "",
+                        "type": "number"
+                    },
+                    "full_metadata_url": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "tags": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "external_catalogue": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "tracking_summary": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "groups": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "creator_user_id": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "relationships_as_subject": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "num_tags": {
+                        "description": "",
+                        "type": "number"
+                    },
+                    "organization": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "name": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "isopen": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "url": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "notes": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "owner_org": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "extras": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "license_url": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "geo_coverage": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "title": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "revision_id": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "taggable": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "external_id": {
+                        "description": "",
+                        "type": "string"
+                    }
+                }
+            },
+            "relationships_as_object": {
+                "type": "array"
+            },
+            "resources": {
+                "type": "array"
+            },
+            "tags": {
+                "type": "array"
+            },
+            "tracking_summary": {
+                "type": "object"
+            },
+            "groups": {
+                "type": "array"
+            },
+            "relationships_as_subject": {
+                "type": "array"
+            },
+            "organization": {
+                "type": "object"
+            },
+            "extras": {
+                "type": "array"
+            },
+            "OrganizationShowModel": {
+                "type": "object",
+                "properties": {
+                    "help": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "success": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "result": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "result": {
+                "type": "array"
+            },
+            "PackageShowModel": {
+                "type": "object",
+                "properties": {
+                    "help": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "success": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "PackageSearchResultModel": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "result": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "GroupListModel": {
+                "type": "object",
+                "properties": {
+                    "help": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "success": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "result": {
+                        "description": "",
+                        "type": "array"
+                    }
+                }
+            },
+            "OrganizationListModel": {
+                "type": "object",
+                "properties": {
+                    "help": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "success": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "result": {
+                        "description": "",
+                        "type": "array"
+                    }
+                }
+            },
+            "RecentChangedPackagesListModel": {
+                "type": "object",
+                "properties": {
+                    "help": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "success": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "result": {
+                        "description": "",
+                        "type": "array"
+                    }
+                }
+            },
+            "OrganizationShowModelResult": {
+                "type": "object"
+            },
+            "UserModel": {
+                "type": "object",
+                "properties": {
+                    "openid": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "about": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "capacity": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "created": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "email_hash": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "sysadmin": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "activity_streams_email_notifications": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "state": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "number_of_edits": {
+                        "description": "",
+                        "type": "number"
+                    },
+                    "number_created_packages": {
+                        "description": "",
+                        "type": "number"
+                    },
+                    "display_name": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "fullname": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "",
+                        "type": "string"
+                    }
+                }
+            },
+            "OrganizationModel": {
+                "type": "object",
+                "properties": {
+                    "display_name": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "title": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "image_display_url": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "approval_status": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "is_organization": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "state": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "image_url": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "revision_id": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "package_count": {
+                        "description": "",
+                        "type": "number"
+                    },
+                    "type": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "created": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "num_followers": {
+                        "description": "",
+                        "type": "number"
+                    }
+                }
+            },
+            "ListModel": {
+                "type": "object",
+                "properties": {
+                    "help": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "success": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "result": {
+                        "description": "",
+                        "type": "array"
+                    }
+                }
+            },
+            "ResourceSearchResult": {
+                "type": "object",
+                "properties": {
+                    "resource_group_id": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "cache_last_updated": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "webstore_last_updated": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "attribution": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "size": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "state": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "filesize": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "last_modified": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "period_end": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "hash": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "format": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "mimetype_inner": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "url_type": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "period_start": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "mimetype": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "cache_url": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "created": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "url": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "release_date": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "webstore_url": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "data_quality": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "position": {
+                        "description": "",
+                        "type": "integer"
+                    },
+                    "revision_id": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "resource_type": {
+                        "description": "",
+                        "type": "string"
+                    }
+                }
+            },
+            "ResourceSearchResultGroup": {
+                "type": "object",
+                "properties": {
+                    "help": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "success": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "result": {
+                        "description": "Reference",
+                        "type": "object"
+                    }
+                }
+            },
+            "DataStoreSearchResult": {
+                "type": "object",
+                "properties": {
+                    "help": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "success": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "result": {
+                        "description": "Reference",
+                        "type": "object"
+                    }
+                }
+            },
+            "PackageAutocompleteModel": {
+                "type": "object",
+                "properties": {
+                    "help": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "success": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "result": {
+                        "description": "",
+                        "type": "array"
+                    }
+                }
+            },
+            "PackageObjectResource": {
+                "type": "object",
+                "properties": {
+                    "resource_group_id": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "cache_last_updated": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "revision_timestamp": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "webstore_last_updated": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "attribution": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "datastore_active": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "id": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "size": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "state": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "period_end": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "hash": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "format": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "tracking_summary": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "mimetype_inner": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "url_type": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "period_start": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "mimetype": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "cache_url": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "created": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "url": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "release_date": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "webstore_url": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "public_order_url": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "last_modified": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "position": {
+                        "description": "",
+                        "type": "number"
+                    },
+                    "revision_id": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "external_id": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "resource_type": {
+                        "description": "",
+                        "type": "string"
+                    }
+                }
+            },
+            "PackageSearchResultsModel": {
+                "type": "object",
+                "properties": {
+                    "help": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "success": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "result": {
+                        "description": "Reference",
+                        "type": "object"
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,5 +1,5 @@
 {
-    "id": "1640ff7e7ca1f4f575e01ba3afd28446",
+    "id": "4ccca4d95a781c037e5a55954a6c7a7d",
     "name": "Museums Victoria Collections API",
     "description": null,
     "auth": null,
@@ -10,7 +10,7 @@
     "folders": [],
     "requests": [
         {
-            "id": "380ddf87ff06e00d54deb0cb5605d970",
+            "id": "9be082d18d858120f5ad8828e798db1c",
             "name": "Returns a list of items.",
             "url": "http:\/\/api.vic.gov.au:443\/museumvictoria\/v1.0\/collections\/items",
             "description": "",
@@ -29,11 +29,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "1640ff7e7ca1f4f575e01ba3afd28446",
+            "collectionId": "4ccca4d95a781c037e5a55954a6c7a7d",
             "rawModeData": ""
         },
         {
-            "id": "e9f9da2ce60cf5e8944f0c346abbc943",
+            "id": "3acfebd658701eac49fa11b9763c613b",
             "name": "Returns a bunch of specimens.",
             "url": "http:\/\/api.vic.gov.au:443\/museumvictoria\/v1.0\/collections\/specimens",
             "description": "",
@@ -52,11 +52,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "1640ff7e7ca1f4f575e01ba3afd28446",
+            "collectionId": "4ccca4d95a781c037e5a55954a6c7a7d",
             "rawModeData": ""
         },
         {
-            "id": "1bb28cb19de1bc42438eff375adee123",
+            "id": "bfd8a7b88188ec745dda71ef92fdacbd",
             "name": "Returns a single article by ID.",
             "url": "http:\/\/api.vic.gov.au:443\/museumvictoria\/v1.0\/collections\/articles\/{articleId}",
             "description": "",
@@ -83,11 +83,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "1640ff7e7ca1f4f575e01ba3afd28446",
+            "collectionId": "4ccca4d95a781c037e5a55954a6c7a7d",
             "rawModeData": ""
         },
         {
-            "id": "fe5663045e85f771c637af7a2f9fc51e",
+            "id": "40c3463a1e5df1d7ce109f403ea4ab27",
             "name": "Returns a single specimen by Id.",
             "url": "http:\/\/api.vic.gov.au:443\/museumvictoria\/v1.0\/collections\/specimens\/{specimenId}",
             "description": "",
@@ -114,11 +114,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "1640ff7e7ca1f4f575e01ba3afd28446",
+            "collectionId": "4ccca4d95a781c037e5a55954a6c7a7d",
             "rawModeData": ""
         },
         {
-            "id": "395ad49590e702f2f9cb92fb4e83dfa4",
+            "id": "76953e61ab6089bc7909268ecce184fc",
             "name": "Returns a single item by ID.",
             "url": "http:\/\/api.vic.gov.au:443\/museumvictoria\/v1.0\/collections\/items\/{itemId}",
             "description": "",
@@ -145,11 +145,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "1640ff7e7ca1f4f575e01ba3afd28446",
+            "collectionId": "4ccca4d95a781c037e5a55954a6c7a7d",
             "rawModeData": ""
         },
         {
-            "id": "a55a51f5070b1c4909b1cc8dcb540fc7",
+            "id": "2f1204cb79eac5124d8df97b0d6c10d8",
             "name": "Returns a single species by Id.",
             "url": "http:\/\/api.vic.gov.au:443\/museumvictoria\/v1.0\/collections\/species\/{speciesId}",
             "description": "",
@@ -176,11 +176,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "1640ff7e7ca1f4f575e01ba3afd28446",
+            "collectionId": "4ccca4d95a781c037e5a55954a6c7a7d",
             "rawModeData": ""
         },
         {
-            "id": "8f968d8b7ee9b3a30f48debda4f3d9bf",
+            "id": "8a093e1593cbb4cd76aa103086a381d7",
             "name": "Searches through the collection",
             "url": "http:\/\/api.vic.gov.au:443\/museumvictoria\/v1.0\/collections\/search",
             "description": "",
@@ -417,11 +417,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "1640ff7e7ca1f4f575e01ba3afd28446",
+            "collectionId": "4ccca4d95a781c037e5a55954a6c7a7d",
             "rawModeData": ""
         },
         {
-            "id": "0d712b28b7017860341c4985ded83071",
+            "id": "c66c07059156d53946d77bcce317f31d",
             "name": "Returns a list of species.",
             "url": "http:\/\/api.vic.gov.au:443\/museumvictoria\/v1.0\/collections\/species",
             "description": "",
@@ -440,11 +440,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "1640ff7e7ca1f4f575e01ba3afd28446",
+            "collectionId": "4ccca4d95a781c037e5a55954a6c7a7d",
             "rawModeData": ""
         },
         {
-            "id": "a30cbc33b0ef5d5ee050b6de2aa15c73",
+            "id": "29b1be8808842557117a716f379fbb1a",
             "name": "Returns a list of articles.",
             "url": "http:\/\/api.vic.gov.au:443\/museumvictoria\/v1.0\/collections\/articles",
             "description": "",
@@ -463,7 +463,7 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "1640ff7e7ca1f4f575e01ba3afd28446",
+            "collectionId": "4ccca4d95a781c037e5a55954a6c7a7d",
             "rawModeData": ""
         }
     ]

@@ -1,5 +1,5 @@
 {
-    "id": "db86cc34cb1957d1368838e491da9a93",
+    "id": "6b91c7549031b657c0d3b1154fbe089e",
     "name": "DataVic CKAN API",
     "description": null,
     "auth": null,
@@ -10,7 +10,7 @@
     "folders": [],
     "requests": [
         {
-            "id": "d0cf330d73738228a6edeb21cb523a4a",
+            "id": "9de9df307cd8b75158169867acdd4791",
             "name": "Metadata about a specific group that has contributed data to the open data repository",
             "url": "http:\/\/api.vic.gov.au:443\/datavic\/v1.2\/group_show",
             "description": "",
@@ -44,11 +44,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "db86cc34cb1957d1368838e491da9a93",
+            "collectionId": "6b91c7549031b657c0d3b1154fbe089e",
             "rawModeData": ""
         },
         {
-            "id": "3213b7b178cb526f0197f1ac23503a95",
+            "id": "d8a09e1fa4ca390c5acaf5810eb36bee",
             "name": "Show a particular resource by ID",
             "url": "http:\/\/api.vic.gov.au:443\/datavic\/v1.2\/resource_show",
             "description": "",
@@ -82,11 +82,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "db86cc34cb1957d1368838e491da9a93",
+            "collectionId": "6b91c7549031b657c0d3b1154fbe089e",
             "rawModeData": ""
         },
         {
-            "id": "47bb9d1fa47c430119dcecee0ac3427b",
+            "id": "dbf6f4063dcdab0947f86e00c8cc99f9",
             "name": "List of all Packages that match the given string.",
             "url": "http:\/\/api.vic.gov.au:443\/datavic\/v1.2\/package_autocomplete",
             "description": "",
@@ -120,11 +120,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "db86cc34cb1957d1368838e491da9a93",
+            "collectionId": "6b91c7549031b657c0d3b1154fbe089e",
             "rawModeData": ""
         },
         {
-            "id": "ce0b6669e2ac51d902606e01b428c1fc",
+            "id": "6db6b6addf3123d8fa4ae46d767938b6",
             "name": "List of all Groups that exist in the Open Data repository.",
             "url": "http:\/\/api.vic.gov.au:443\/datavic\/v1.2\/group_list",
             "description": "",
@@ -165,11 +165,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "db86cc34cb1957d1368838e491da9a93",
+            "collectionId": "6b91c7549031b657c0d3b1154fbe089e",
             "rawModeData": ""
         },
         {
-            "id": "d4e7298818644d2127a893d820d95372",
+            "id": "081ed976ebb119c8f7a65fc640ecfc3b",
             "name": "Display of a single data container within the open data repository.",
             "url": "http:\/\/api.vic.gov.au:443\/datavic\/v1.2\/package_show",
             "description": "",
@@ -203,11 +203,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "db86cc34cb1957d1368838e491da9a93",
+            "collectionId": "6b91c7549031b657c0d3b1154fbe089e",
             "rawModeData": ""
         },
         {
-            "id": "cae3380c0ccf7bbbf98186120899ebe4",
+            "id": "09225dbc45de52bfb3bb6e50f31f1c6f",
             "name": "Returns a list of the recently changed Packages",
             "url": "http:\/\/api.vic.gov.au:443\/datavic\/v1.2\/recently_changed_packages_activity_list",
             "description": "",
@@ -241,11 +241,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "db86cc34cb1957d1368838e491da9a93",
+            "collectionId": "6b91c7549031b657c0d3b1154fbe089e",
             "rawModeData": ""
         },
         {
-            "id": "31f3a5ee87322c441286e33e84fc364a",
+            "id": "f9b1c4bebd35ec750dce75c758f5f763",
             "name": "Show the list of Packages that are within a group",
             "url": "http:\/\/api.vic.gov.au:443\/datavic\/v1.2\/group_package_show",
             "description": "",
@@ -279,11 +279,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "db86cc34cb1957d1368838e491da9a93",
+            "collectionId": "6b91c7549031b657c0d3b1154fbe089e",
             "rawModeData": ""
         },
         {
-            "id": "2b02b101d3127f2758e401b61c5b4e3c",
+            "id": "56deee984ba4fcbd5c0c3728900f473a",
             "name": "Search functionality to perform inspection of a specified supported resource file. Note: Support is limited to CSV files.",
             "url": "http:\/\/api.vic.gov.au:443\/datavic\/v1.2\/datastore_search",
             "description": "",
@@ -366,11 +366,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "db86cc34cb1957d1368838e491da9a93",
+            "collectionId": "6b91c7549031b657c0d3b1154fbe089e",
             "rawModeData": ""
         },
         {
-            "id": "c596ddeefa7bc1d2d0cff6848751f6a0",
+            "id": "2a0ded16a4ecd115ca39555ed1ea3d40",
             "name": "List of all parent data containers within the open data repository.",
             "url": "http:\/\/api.vic.gov.au:443\/datavic\/v1.2\/package_list",
             "description": "",
@@ -404,11 +404,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "db86cc34cb1957d1368838e491da9a93",
+            "collectionId": "6b91c7549031b657c0d3b1154fbe089e",
             "rawModeData": ""
         },
         {
-            "id": "64e1304ccd0ee8c3e999981e66ee02ba",
+            "id": "bf10d8fafcc91c9ef1d2fc752e90c54a",
             "name": "Search functionality across all data containers within the open data repository.",
             "url": "http:\/\/api.vic.gov.au:443\/datavic\/v1.2\/package_search",
             "description": "",
@@ -463,11 +463,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "db86cc34cb1957d1368838e491da9a93",
+            "collectionId": "6b91c7549031b657c0d3b1154fbe089e",
             "rawModeData": ""
         },
         {
-            "id": "2f83d568f9872bb7c1de2972cbb478b3",
+            "id": "d65d4a96d1dc59808c219a581a59a42d",
             "name": "List of all parent data containers within the open data repository and their nested resources.",
             "url": "http:\/\/api.vic.gov.au:443\/datavic\/v1.2\/current_package_list_with_resources",
             "description": "",
@@ -501,11 +501,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "db86cc34cb1957d1368838e491da9a93",
+            "collectionId": "6b91c7549031b657c0d3b1154fbe089e",
             "rawModeData": ""
         },
         {
-            "id": "8f001153dd16c533c4d0390ee7882ed3",
+            "id": "5d5c70ea73abc911a1756ef6b204e4b4",
             "name": "Search functionality across all resources in the open data repository.",
             "url": "http:\/\/api.vic.gov.au:443\/datavic\/v1.2\/resource_search",
             "description": "",
@@ -553,11 +553,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "db86cc34cb1957d1368838e491da9a93",
+            "collectionId": "6b91c7549031b657c0d3b1154fbe089e",
             "rawModeData": ""
         },
         {
-            "id": "94d691985bed6a26c0e1a19ed7004c3a",
+            "id": "5e03eca9b2e23caa393ed1b81402f6b0",
             "name": "Metadata about a specific organization that has contributed data to the open data repository",
             "url": "http:\/\/api.vic.gov.au:443\/datavic\/v1.2\/organization_show",
             "description": "",
@@ -591,11 +591,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "db86cc34cb1957d1368838e491da9a93",
+            "collectionId": "6b91c7549031b657c0d3b1154fbe089e",
             "rawModeData": ""
         },
         {
-            "id": "b2db43f16ea0d1c6c046489e26b91b35",
+            "id": "a74e0a1c26c8e527c61a56c355f6decf",
             "name": "List of all Organizations that have contributed data to the Open Data repository.",
             "url": "http:\/\/api.vic.gov.au:443\/datavic\/v1.2\/organization_list",
             "description": "",
@@ -629,7 +629,7 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "db86cc34cb1957d1368838e491da9a93",
+            "collectionId": "6b91c7549031b657c0d3b1154fbe089e",
             "rawModeData": ""
         }
     ]

@@ -1,5 +1,5 @@
 {
-    "id": "dbb8581be752a53176f937008412b011",
+    "id": "5edf811f78d9e7d52f8fcc88be27618a",
     "name": "Datavic Open Data API",
     "description": null,
     "auth": null,
@@ -10,7 +10,7 @@
     "folders": [],
     "requests": [
         {
-            "id": "522e6c6f6f3f7bb721007cd87864824a",
+            "id": "358d95e628fd908db988b9f292c3e434",
             "name": "Display of a single data container within the open data repository.",
             "url": "http:\/\/api.vic.gov.au:443\/datavic\/opendata\/v1.1\/datasets\/{id}",
             "description": "Display of a single data container within the open data repository.\n",
@@ -37,11 +37,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "dbb8581be752a53176f937008412b011",
+            "collectionId": "5edf811f78d9e7d52f8fcc88be27618a",
             "rawModeData": ""
         },
         {
-            "id": "3bf9f43f8c54f47402e88b6381a0d976",
+            "id": "9483676da006eaf7e52df69891a7ef6d",
             "name": "Retreive single organisation.",
             "url": "http:\/\/api.vic.gov.au:443\/datavic\/opendata\/v1.1\/organisations\/{id}",
             "description": "Retreive single organisation within the open data repository.\n",
@@ -68,11 +68,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "dbb8581be752a53176f937008412b011",
+            "collectionId": "5edf811f78d9e7d52f8fcc88be27618a",
             "rawModeData": ""
         },
         {
-            "id": "ad7787d8bd6bfc9ab7683b5ea51fe66d",
+            "id": "b26ecf4255c6fe159491117cc0d58c04",
             "name": "List of all parent data containers within the open data repository.",
             "url": "http:\/\/api.vic.gov.au:443\/datavic\/opendata\/v1.1\/datasets",
             "description": "List of all parent data containers within the open data repository.\n",
@@ -127,11 +127,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "dbb8581be752a53176f937008412b011",
+            "collectionId": "5edf811f78d9e7d52f8fcc88be27618a",
             "rawModeData": ""
         },
         {
-            "id": "3018b027ba41b3d2badef3b487ddbf7a",
+            "id": "13bb0322706e13e9e4fe6cf071f21183",
             "name": "List all Resources available in the Open Data Repository.",
             "url": "http:\/\/api.vic.gov.au:443\/datavic\/opendata\/v1.1\/resources",
             "description": "List all Resources available in the Open Data Repository. At least one non-paginationatio query parameter should be propvided- at least one query parameter should be present.\n",
@@ -207,11 +207,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "dbb8581be752a53176f937008412b011",
+            "collectionId": "5edf811f78d9e7d52f8fcc88be27618a",
             "rawModeData": ""
         },
         {
-            "id": "c4fac1be2ebd9d8d5e20d4d091017c1c",
+            "id": "b8fe7c3da620b909da36e9708c9a5bcf",
             "name": "List Organisations contributed data to Open Data Repository.",
             "url": "http:\/\/api.vic.gov.au:443\/datavic\/opendata\/v1.1\/organisations",
             "description": "List Organisations contributed data to Open Data Repository.\n",
@@ -238,7 +238,7 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "dbb8581be752a53176f937008412b011",
+            "collectionId": "5edf811f78d9e7d52f8fcc88be27618a",
             "rawModeData": ""
         }
     ]

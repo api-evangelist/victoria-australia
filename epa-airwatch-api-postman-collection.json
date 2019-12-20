@@ -1,5 +1,5 @@
 {
-    "id": "5a90282fc4bb46071f64ae3398768ff5",
+    "id": "622bb4008b57d853afbd1d96948460cd",
     "name": "EPA AirWatch API",
     "description": null,
     "auth": null,
@@ -10,7 +10,7 @@
     "folders": [],
     "requests": [
         {
-            "id": "218fa2e92988f603d425eebd2ebdedbb",
+            "id": "381e762419591da429f7438f86152225",
             "name": "Returns the last 2 days of air quality measurements for all operating sites.",
             "url": "http:\/\/api.vic.gov.au:443\/epa\/v1.0\/airwatch\/Sites2DayAirQuality",
             "description": "This provides the last two-days of all air quality data available for all sites currently operating, including Incident Air Monitoring (IAM) sites. The two days of data ends at the completed 1-hour period closest to the \u2018current\u2019 1-hour period. \n\nThe \u2018current\u2019 1-hour period is the hour that finished before the time now, less a \u2018buffer\u2019 period. For example at the time 15:25 the current 1-hour period is 13:00 to 14:00. Currently the buffer period is 35 minutes. T\n\nThere are no paramete",
@@ -29,11 +29,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "5a90282fc4bb46071f64ae3398768ff5",
+            "collectionId": "622bb4008b57d853afbd1d96948460cd",
             "rawModeData": ""
         },
         {
-            "id": "e79c9e288bbc293f4d57fd2ab672597b",
+            "id": "752b9fd067c0869720590e448f793f94",
             "name": "Returns in a structure suitable for tabular presentation all air quality measurements for a single specified hour for all operating sites.",
             "url": "http:\/\/api.vic.gov.au:443\/epa\/v1.0\/airwatch\/SitesHourlyAirQuality",
             "description": "This is the default GET TimeBasis foundation web service without parameters. This returns a collection listing all available records of Time_Basis with associated Measurement records falling within the date range, and for site_id and\/or monitor_id if provided. \n\n  - fromDate - default is 48 hours prior to the current date and hour. \n  - toDate - default is the current date and hour.\n",
@@ -60,11 +60,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "5a90282fc4bb46071f64ae3398768ff5",
+            "collectionId": "622bb4008b57d853afbd1d96948460cd",
             "rawModeData": ""
         },
         {
-            "id": "9dfee704fcdce39535fdbdcf9b07bcd1",
+            "id": "9f2b828c7f6c4c68d67f945e930a898d",
             "name": "Provide a set of air quality Measurements that the EPA has made for a specific Monitor at a specific Site over a specific date range.",
             "url": "http:\/\/api.vic.gov.au:443\/epa\/v1.0\/airwatch\/Measurements",
             "description": "This returns a collection listing all available Measurement records falling within the date range, and for site_id and\/or monitor_id and\/or time_basis_id if provided. \n\n- time_basis_id - default is \u20181HR_AV\u2019 \n- from_date - default is 48 hours prior to the current date and hour. \n- to_date - default is the current date and hour\n",
@@ -119,11 +119,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "5a90282fc4bb46071f64ae3398768ff5",
+            "collectionId": "622bb4008b57d853afbd1d96948460cd",
             "rawModeData": ""
         },
         {
-            "id": "09b5e7a2518c0312eb7203403e026ec7",
+            "id": "57a67a31ee1d4185049cfbe48157fa03",
             "name": "Returns the last 2 days of air quality measurements for all operating sites (provided to support existing web sites).",
             "url": "http:\/\/api.vic.gov.au:443\/epa\/v1.0\/airwatch\/GetAirQualityAirDataList",
             "description": "",
@@ -142,11 +142,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "5a90282fc4bb46071f64ae3398768ff5",
+            "collectionId": "622bb4008b57d853afbd1d96948460cd",
             "rawModeData": ""
         },
         {
-            "id": "4e9282139413cb4a87c6a6374e23a4b0",
+            "id": "4da3af497c505f159732987cbb048579",
             "name": "Returns the last 2 days of air quality measurements for a specific site.",
             "url": "http:\/\/api.vic.gov.au:443\/epa\/v1.0\/airwatch\/StationData",
             "description": "Provide the last two-days of air quality data for a specific Site that is currently operational.\n\nThe two-day period ends at the \u2018current\u2019 1-hour period. \n",
@@ -173,11 +173,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "5a90282fc4bb46071f64ae3398768ff5",
+            "collectionId": "622bb4008b57d853afbd1d96948460cd",
             "rawModeData": ""
         },
         {
-            "id": "fcd3aa303d93773e89a998e8aea56f93",
+            "id": "1bd1cab4e553505458d2bb51ef180ddf",
             "name": "List of physical characteristics (monitors or parameters) of air measured at a specific site over a specific time period \u2013 examples include CO, NO2, or PM2.5.",
             "url": "http:\/\/api.vic.gov.au:443\/epa\/v1.0\/airwatch\/Monitors",
             "description": "Provide a list of Monitors measured at a specific Site within a time period. A Monitor represents a chemical or physical property of the air at the Site, such as CO or NO2 concentration, or the density of suspended particulate matter. (Dust and smoke are common forms of particulate matter suspended in air.) A common synonym for Monitor is Parameter.  \n\n- from_date - default is 48 hours prior to the current date and hour. \n- to_date - default is the current date and hour.\n",
@@ -218,11 +218,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "5a90282fc4bb46071f64ae3398768ff5",
+            "collectionId": "622bb4008b57d853afbd1d96948460cd",
             "rawModeData": ""
         },
         {
-            "id": "522eae55e47113edaaf0c2b504edd2f0",
+            "id": "4cb39f66adcff30e2d0232e921e0b3b4",
             "name": "Provide a list of locations (Sites) at which the EPA operated air quality monitoring equipment for a time period.",
             "url": "http:\/\/api.vic.gov.au:443\/epa\/v1.0\/airwatch\/Sites",
             "description": "First of the four \u2018foundation\u2019 web services that provide access to all air quality data that the EPA has collected. The first three foundation web services provide reference data necessary for the fourth Measurements service, which provides the air quality measurement data. \n",
@@ -263,11 +263,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "5a90282fc4bb46071f64ae3398768ff5",
+            "collectionId": "622bb4008b57d853afbd1d96948460cd",
             "rawModeData": ""
         },
         {
-            "id": "e1f2d97d62846d53a3388a69aeaa7482",
+            "id": "deb7b8638ee598c356615b983b98929b",
             "name": "Provide a list of the Time Basis over which the EPA measures each Monitor at each Site.",
             "url": "http:\/\/api.vic.gov.au:443\/epa\/v1.0\/airwatch\/TimeBasis",
             "description": "The most commonly calculated and presented Time Basis is a 1-hour average Measurement (1HR_AV). The most detailed available Time Basis is 5MIN_AV. \nOther Time Basis that the EPA currently use comprise 8-hour rolling average, calculated hourly, for CO, and 24-hour rolling average, calculated hourly, for PM2.5 \n\n  - fromDate - default is 48 hours prior to the current date and hour. \n  - toDate - default is the current date and hour.\n",
@@ -315,7 +315,7 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "5a90282fc4bb46071f64ae3398768ff5",
+            "collectionId": "622bb4008b57d853afbd1d96948460cd",
             "rawModeData": ""
         }
     ]

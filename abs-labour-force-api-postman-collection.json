@@ -1,5 +1,5 @@
 {
-    "id": "764c0421492efc440e797a4f66ec49e7",
+    "id": "4ad4a6b61dc7811bbeb8f7962a6f8a9f",
     "name": "ABS Labour Force API",
     "description": null,
     "auth": null,
@@ -10,7 +10,7 @@
     "folders": [],
     "requests": [
         {
-            "id": "7cfb228d8fa265d136116bc16ac80b3c",
+            "id": "f0d66396d3a7d140c6cbfe052d275222",
             "name": "ABS Statistics datasets for Labour Force",
             "url": "http:\/\/api.vic.gov.au:443\/abs\/v1.0\/labour-force-statistics",
             "description": "ABS Statistics datasets for Labour Force",
@@ -93,7 +93,7 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "764c0421492efc440e797a4f66ec49e7",
+            "collectionId": "4ad4a6b61dc7811bbeb8f7962a6f8a9f",
             "rawModeData": ""
         }
     ]

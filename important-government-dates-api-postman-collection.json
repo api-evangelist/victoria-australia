@@ -1,5 +1,5 @@
 {
-    "id": "6391c3157b819cfd208cfe40ba783c86",
+    "id": "01497e027a18c4ad01206270bdc77ded",
     "name": "Important Government Dates API",
     "description": null,
     "auth": null,
@@ -10,7 +10,7 @@
     "folders": [],
     "requests": [
         {
-            "id": "3bd9bdad82b98c857d7c2c2ae0af277f",
+            "id": "63cb9a2e40e70c626d0dff7d61294e1a",
             "name": "Get a list of dates.",
             "url": "http:\/\/api.vic.gov.au:443\/vicgov\/v1.0\/dates",
             "description": "Note that pagination is enabled by default for performance reasons.  The default limit value is 50 records per page.",
@@ -79,11 +79,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "6391c3157b819cfd208cfe40ba783c86",
+            "collectionId": "01497e027a18c4ad01206270bdc77ded",
             "rawModeData": ""
         },
         {
-            "id": "eabb8c4ccd4e6544aa9ff84c3f1e0aac",
+            "id": "b18a21b9fdca4fd36a7477cda435e4f6",
             "name": "Create a date.",
             "url": "http:\/\/api.vic.gov.au:443\/vicgov\/v1.0\/dates",
             "description": "This method is for internal data adminstrators only.",
@@ -102,7 +102,7 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "6391c3157b819cfd208cfe40ba783c86",
+            "collectionId": "01497e027a18c4ad01206270bdc77ded",
             "rawModeData": ""
         }
     ]

@@ -249,6 +249,18 @@
                     "_links": {
                         "description": "",
                         "type": "array"
+                    },
+                    "MetaModel": {
+                        "description": "Meta object model",
+                        "type": "object"
+                    },
+                    "DatasetResponse_organisation": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "DatasetResponse__embedded": {
+                        "description": "",
+                        "type": "object"
                     }
                 }
             },

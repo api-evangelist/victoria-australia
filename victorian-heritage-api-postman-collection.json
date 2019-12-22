@@ -1,5 +1,5 @@
 {
-    "id": "a32de5bc8bc33ca37719010bba745892",
+    "id": "82a40201e6a0a662ac144655f5b4e4f3",
     "name": "Victorian Heritage API",
     "description": null,
     "auth": null,
@@ -10,7 +10,7 @@
     "folders": [],
     "requests": [
         {
-            "id": "bbd5e7a0bbdf3b23c7a160b8243ba3fb",
+            "id": "ae0c39cbdbdd4110f5101c1baafcba58",
             "name": "Fetch all information relating to a specific place. Requires a place id number.",
             "url": "http:\/\/api.vic.gov.au:443\/vhd\/1.0\/places\/{places_id}",
             "description": "",
@@ -37,11 +37,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a32de5bc8bc33ca37719010bba745892",
+            "collectionId": "82a40201e6a0a662ac144655f5b4e4f3",
             "rawModeData": ""
         },
         {
-            "id": "ef3c1d49ac48267611431b232d560b99",
+            "id": "05acf4ffe12fa4a9eba22045cf1ef380",
             "name": "Fetch a collection of places  e.g: \/places-collection?col[]=1&col[]=2&col[]=3.",
             "url": "http:\/\/api.vic.gov.au:443\/vhd\/1.0\/places-collection",
             "description": "",
@@ -68,11 +68,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a32de5bc8bc33ca37719010bba745892",
+            "collectionId": "82a40201e6a0a662ac144655f5b4e4f3",
             "rawModeData": ""
         },
         {
-            "id": "9c91dbaf3cb7a2b0133374870b138d54",
+            "id": "fe90e133a80e8fe5ef10fc037133cb6b",
             "name": "Retrieve a list of sub categories for a given category.",
             "url": "http:\/\/api.vic.gov.au:443\/vhd\/1.0\/categories\/{categories_id}",
             "description": "",
@@ -99,11 +99,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a32de5bc8bc33ca37719010bba745892",
+            "collectionId": "82a40201e6a0a662ac144655f5b4e4f3",
             "rawModeData": ""
         },
         {
-            "id": "cdeae6f2eee79dec6cea4ddfefaf6057",
+            "id": "dccbc123d72b0310c9ea781ed7bff52b",
             "name": "Use the kw parameter to retrieve an array of suggested words. e.g: \/autocomplete?kw=foo",
             "url": "http:\/\/api.vic.gov.au:443\/vhd\/1.0\/autocomplete",
             "description": "",
@@ -137,11 +137,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a32de5bc8bc33ca37719010bba745892",
+            "collectionId": "82a40201e6a0a662ac144655f5b4e4f3",
             "rawModeData": ""
         },
         {
-            "id": "1cbf67a8e6a5e36f7bad512d6c7e93d7",
+            "id": "50ea1853f3e6b6b1d20e201783df304c",
             "name": "Fetch all information for a specific shipwreck.",
             "url": "http:\/\/api.vic.gov.au:443\/vhd\/1.0\/shipwrecks\/{shipwrecks_id}",
             "description": "",
@@ -168,11 +168,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a32de5bc8bc33ca37719010bba745892",
+            "collectionId": "82a40201e6a0a662ac144655f5b4e4f3",
             "rawModeData": ""
         },
         {
-            "id": "a44961c2ab74f2cb05f6f89649694936",
+            "id": "2ece8dc658cb048c0d6d41716ee9a6a1",
             "name": "Access this endpoint to retrieve the full paginated list of recommended tours.",
             "url": "http:\/\/api.vic.gov.au:443\/vhd\/1.0\/recommended-tours",
             "description": "",
@@ -191,11 +191,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a32de5bc8bc33ca37719010bba745892",
+            "collectionId": "82a40201e6a0a662ac144655f5b4e4f3",
             "rawModeData": ""
         },
         {
-            "id": "82d0a8d249d76545ca2680292c7042b3",
+            "id": "6cc8166b20c661b4b77254e341e2fd3c",
             "name": "Retrieve a collection of shipwrecks.",
             "url": "http:\/\/api.vic.gov.au:443\/vhd\/1.0\/shipwrecks-collection",
             "description": "",
@@ -222,11 +222,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a32de5bc8bc33ca37719010bba745892",
+            "collectionId": "82a40201e6a0a662ac144655f5b4e4f3",
             "rawModeData": ""
         },
         {
-            "id": "d96ad4a58d21730ca075947cdae64292",
+            "id": "8f285a971cb5c57d69fc43c37fe838ca",
             "name": "Retrieve a list of categories",
             "url": "http:\/\/api.vic.gov.au:443\/vhd\/1.0\/categories",
             "description": "",
@@ -245,11 +245,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a32de5bc8bc33ca37719010bba745892",
+            "collectionId": "82a40201e6a0a662ac144655f5b4e4f3",
             "rawModeData": ""
         },
         {
-            "id": "f3a42db6376102356c93d1395029c089",
+            "id": "7527ef0a90860d16dca5c01fdc7ec073",
             "name": "Get the list of available 5 year periods for year built.",
             "url": "http:\/\/api.vic.gov.au:443\/vhd\/1.0\/ship-periods-built",
             "description": "",
@@ -268,11 +268,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a32de5bc8bc33ca37719010bba745892",
+            "collectionId": "82a40201e6a0a662ac144655f5b4e4f3",
             "rawModeData": ""
         },
         {
-            "id": "040c9881dc336af821c9f00f99c2941f",
+            "id": "d193e3aef55c0c1c46f236440953d731",
             "name": "Access this endpoint with a Tour ID to retrieve the full information about a specific tour.",
             "url": "http:\/\/api.vic.gov.au:443\/vhd\/1.0\/recommended-tours\/{recommended_tours_id}",
             "description": "",
@@ -299,11 +299,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a32de5bc8bc33ca37719010bba745892",
+            "collectionId": "82a40201e6a0a662ac144655f5b4e4f3",
             "rawModeData": ""
         },
         {
-            "id": "39028d2e4e02f247b9d23277125485cf",
+            "id": "6295f668bfefc3c4c7717853f3138e0b",
             "name": "Get the complete list of ship propulsion types",
             "url": "http:\/\/api.vic.gov.au:443\/vhd\/1.0\/ship-propulsions",
             "description": "",
@@ -322,11 +322,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a32de5bc8bc33ca37719010bba745892",
+            "collectionId": "82a40201e6a0a662ac144655f5b4e4f3",
             "rawModeData": ""
         },
         {
-            "id": "9d9cf6411b4ad49f41e1cf76942b37ce",
+            "id": "6fcdbffffaaad836dde3cb993af5fe34",
             "name": "Get the list of available primary themes.",
             "url": "http:\/\/api.vic.gov.au:443\/vhd\/1.0\/themes",
             "description": "",
@@ -345,11 +345,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a32de5bc8bc33ca37719010bba745892",
+            "collectionId": "82a40201e6a0a662ac144655f5b4e4f3",
             "rawModeData": ""
         },
         {
-            "id": "6dea0bff985d3f5c254eb8475b40cc19",
+            "id": "a6a7f98887dc23505cdd2dfdcee377d1",
             "name": "Get the complete list of Heritage Authorities, to fetch only those Heritage Authorities that have records pass in the 'hasListings' parameter with a trueish value. (\/heritage-authorities?hasListings=true)",
             "url": "http:\/\/api.vic.gov.au:443\/vhd\/1.0\/heritage-authorities",
             "description": "",
@@ -368,11 +368,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a32de5bc8bc33ca37719010bba745892",
+            "collectionId": "82a40201e6a0a662ac144655f5b4e4f3",
             "rawModeData": ""
         },
         {
-            "id": "e5b45f56698dade487be15e9ec3209b7",
+            "id": "bc26e4a937b9f7748f1df096857de387",
             "name": "Get the list of available 5 year periods",
             "url": "http:\/\/api.vic.gov.au:443\/vhd\/1.0\/periods",
             "description": "",
@@ -391,11 +391,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a32de5bc8bc33ca37719010bba745892",
+            "collectionId": "82a40201e6a0a662ac144655f5b4e4f3",
             "rawModeData": ""
         },
         {
-            "id": "27a5150ff3746ef7336bdf7bc0350510",
+            "id": "1c710161602fa8f3fa0c085f19eda483",
             "name": "Get the full list of available construction materials.",
             "url": "http:\/\/api.vic.gov.au:443\/vhd\/1.0\/ship-construction-materials",
             "description": "",
@@ -414,11 +414,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a32de5bc8bc33ca37719010bba745892",
+            "collectionId": "82a40201e6a0a662ac144655f5b4e4f3",
             "rawModeData": ""
         },
         {
-            "id": "489a210988603c2652846d83b8ca1c75",
+            "id": "4e97730261fe21defb92d852c046e41b",
             "name": "Get the complete list of heritage act categories",
             "url": "http:\/\/api.vic.gov.au:443\/vhd\/1.0\/heritage-act-categories",
             "description": "",
@@ -437,11 +437,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a32de5bc8bc33ca37719010bba745892",
+            "collectionId": "82a40201e6a0a662ac144655f5b4e4f3",
             "rawModeData": ""
         },
         {
-            "id": "dda2bbb5eafc8ec1b8ddca384ade7ca6",
+            "id": "e54a613e10fed21e5675c39578310506",
             "name": "Get the list of primary uses for shipwrecks",
             "url": "http:\/\/api.vic.gov.au:443\/vhd\/1.0\/ship-primary-uses",
             "description": "",
@@ -460,11 +460,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a32de5bc8bc33ca37719010bba745892",
+            "collectionId": "82a40201e6a0a662ac144655f5b4e4f3",
             "rawModeData": ""
         },
         {
-            "id": "9213c5e51a6adbf3145c7c32c0349ff5",
+            "id": "a1e75601e9a7f0bc7124b09ec3b6659d",
             "name": "Get the list of available architects",
             "url": "http:\/\/api.vic.gov.au:443\/vhd\/1.0\/architects",
             "description": "",
@@ -483,11 +483,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a32de5bc8bc33ca37719010bba745892",
+            "collectionId": "82a40201e6a0a662ac144655f5b4e4f3",
             "rawModeData": ""
         },
         {
-            "id": "f45c8e83dcb99a11db83d0fe191c3203",
+            "id": "f28fd89a73681c11827d07fa69cb0af3",
             "name": "Fetch the paginated list of shipwrecks.",
             "url": "http:\/\/api.vic.gov.au:443\/vhd\/1.0\/shipwrecks",
             "description": "",
@@ -682,11 +682,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a32de5bc8bc33ca37719010bba745892",
+            "collectionId": "82a40201e6a0a662ac144655f5b4e4f3",
             "rawModeData": ""
         },
         {
-            "id": "a81f80302e0952809d1e86f81f40298d",
+            "id": "d56b7acf7c57f4828deed71f1fef4ebf",
             "name": "Fetch the list of available municipalities.",
             "url": "http:\/\/api.vic.gov.au:443\/vhd\/1.0\/municipalities",
             "description": "",
@@ -705,11 +705,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a32de5bc8bc33ca37719010bba745892",
+            "collectionId": "82a40201e6a0a662ac144655f5b4e4f3",
             "rawModeData": ""
         },
         {
-            "id": "3db975dbf2372004fd6b44325307f68b",
+            "id": "1d3e753e229f2231b196e92c3a7553f3",
             "name": "Get the list of sub-themes for a given primary theme.",
             "url": "http:\/\/api.vic.gov.au:443\/vhd\/1.0\/themes\/{themes_id}",
             "description": "",
@@ -736,11 +736,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a32de5bc8bc33ca37719010bba745892",
+            "collectionId": "82a40201e6a0a662ac144655f5b4e4f3",
             "rawModeData": ""
         },
         {
-            "id": "75c151f206cb1f538a4662aba67de74e",
+            "id": "e9ab35d256865844812648a6ae5b8f5c",
             "name": "Get the list of available rig types",
             "url": "http:\/\/api.vic.gov.au:443\/vhd\/1.0\/ship-rigs",
             "description": "",
@@ -759,11 +759,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a32de5bc8bc33ca37719010bba745892",
+            "collectionId": "82a40201e6a0a662ac144655f5b4e4f3",
             "rawModeData": ""
         },
         {
-            "id": "67852e68f32d1aa3941cb901920c9edf",
+            "id": "6a6a999896a83f9318ada33fcedff160",
             "name": "Get the complete list of architectural styles",
             "url": "http:\/\/api.vic.gov.au:443\/vhd\/1.0\/architectural-styles",
             "description": "",
@@ -782,11 +782,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a32de5bc8bc33ca37719010bba745892",
+            "collectionId": "82a40201e6a0a662ac144655f5b4e4f3",
             "rawModeData": ""
         },
         {
-            "id": "49da70a621eb0f898626eff2807a1aee",
+            "id": "9e306bdcf8cfe336bbdf57915af4d6be",
             "name": "Get the list of secondary uses for shipwrecks",
             "url": "http:\/\/api.vic.gov.au:443\/vhd\/1.0\/ship-secondary-uses",
             "description": "",
@@ -805,11 +805,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a32de5bc8bc33ca37719010bba745892",
+            "collectionId": "82a40201e6a0a662ac144655f5b4e4f3",
             "rawModeData": ""
         },
         {
-            "id": "752d3974c4aeb28324ad3e664827f092",
+            "id": "29574704183e2ffb162e04a83f7b5c99",
             "name": "Retrieve paginated collection of VHD places.",
             "url": "http:\/\/api.vic.gov.au:443\/vhd\/1.0\/places",
             "description": "",
@@ -1018,11 +1018,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a32de5bc8bc33ca37719010bba745892",
+            "collectionId": "82a40201e6a0a662ac144655f5b4e4f3",
             "rawModeData": ""
         },
         {
-            "id": "b2eb35d36e291f69fbe55eee44c86a76",
+            "id": "01bcf2eedfce6ee690c94b9bd23493c8",
             "name": "Get the list of available 5 year periods for date lost.",
             "url": "http:\/\/api.vic.gov.au:443\/vhd\/1.0\/ship-periods-lost",
             "description": "",
@@ -1041,7 +1041,7 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a32de5bc8bc33ca37719010bba745892",
+            "collectionId": "82a40201e6a0a662ac144655f5b4e4f3",
             "rawModeData": ""
         }
     ]

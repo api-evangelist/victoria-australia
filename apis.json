@@ -7,12 +7,13 @@
         "government",
         "have api",
         "have swagger",
+        "new",
         "open data",
         "public data",
         "state government"
     ],
-    "created": "2019-12-19",
-    "modified": "2019-12-19",
+    "created": "2019-12-21",
+    "modified": "2019-12-21",
     "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/victoria-australia\/master\/apis.json",
     "specificationVersion": "0.14",
     "apis": [
@@ -26,15 +27,11 @@
             "properties": [
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/abs-labour-force-api-openapi.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/victoria-australia\/master\/abs-labour-force-api-openapi.json"
                 },
                 {
                     "type": "x-postman-collecction",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/abs-labour-force-api-postman-collection.json"
-                },
-                {
-                    "type": "x-postman-collecction",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/abs-labour-force-api-postman-collection.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/victoria-australia\/master\/abs-labour-force-api-postman-collection.json"
                 },
                 {
                     "type": "x-documentation",
@@ -52,15 +49,11 @@
             "properties": [
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/agriculture-victoria-soils-api-openapi.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/victoria-australia\/master\/agriculture-victoria-soils-api-openapi.json"
                 },
                 {
                     "type": "x-postman-collecction",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/agriculture-victoria-soils-api-postman-collection.json"
-                },
-                {
-                    "type": "x-postman-collecction",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/agriculture-victoria-soils-api-postman-collection.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/victoria-australia\/master\/agriculture-victoria-soils-api-postman-collection.json"
                 },
                 {
                     "type": "x-documentation",
@@ -78,45 +71,15 @@
             "properties": [
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/datavic-ckan-api-openapi.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/victoria-australia\/master\/datavic-ckan-api-openapi.json"
                 },
                 {
                     "type": "x-postman-collecction",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/datavic-ckan-api-postman-collection.json"
-                },
-                {
-                    "type": "x-postman-collecction",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/datavic-ckan-api-postman-collection.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/victoria-australia\/master\/datavic-ckan-api-postman-collection.json"
                 },
                 {
                     "type": "x-documentation",
                     "url": "https:\/\/developer.vic.gov.au\/index.php?option=com_apiportal&view=apitester&usage=api&tab=tests&apiName=DataVic%20CKAN%20API&apiId=a2842043-2818-4961-b0ea-c99b2a178ee4&menuId=187"
-                }
-            ]
-        },
-        {
-            "name": "Datavic Open Data API",
-            "description": null,
-            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/logos\/victoria-australia-logo.png",
-            "humanURL": "https:\/\/www.vic.gov.au",
-            "baseURL": "",
-            "tags": [],
-            "properties": [
-                {
-                    "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/datavic-open-data-api-openapi.json"
-                },
-                {
-                    "type": "x-postman-collecction",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/datavic-open-data-api-postman-collection.json"
-                },
-                {
-                    "type": "x-postman-collecction",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/datavic-open-data-api-postman-collection.json"
-                },
-                {
-                    "type": "x-documentation",
-                    "url": "https:\/\/developer.vic.gov.au\/index.php?option=com_apiportal&view=apitester&usage=api&tab=tests&apiName=Datavic%20Open%20Data%20API&apiId=e78027c6-4402-4049-b030-89b05daa624a&menuId=187"
                 }
             ]
         },
@@ -130,15 +93,11 @@
             "properties": [
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/epa-airwatch-api-openapi.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/victoria-australia\/master\/epa-airwatch-api-openapi.json"
                 },
                 {
                     "type": "x-postman-collecction",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/epa-airwatch-api-postman-collection.json"
-                },
-                {
-                    "type": "x-postman-collecction",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/epa-airwatch-api-postman-collection.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/victoria-australia\/master\/epa-airwatch-api-postman-collection.json"
                 },
                 {
                     "type": "x-documentation",
@@ -156,15 +115,11 @@
             "properties": [
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/important-government-dates-api-openapi.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/victoria-australia\/master\/important-government-dates-api-openapi.json"
                 },
                 {
                     "type": "x-postman-collecction",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/important-government-dates-api-postman-collection.json"
-                },
-                {
-                    "type": "x-postman-collecction",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/important-government-dates-api-postman-collection.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/victoria-australia\/master\/important-government-dates-api-postman-collection.json"
                 },
                 {
                     "type": "x-documentation",
@@ -182,15 +137,11 @@
             "properties": [
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/museums-victoria-collections-api-openapi.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/victoria-australia\/master\/museums-victoria-collections-api-openapi.json"
                 },
                 {
                     "type": "x-postman-collecction",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/museums-victoria-collections-api-postman-collection.json"
-                },
-                {
-                    "type": "x-postman-collecction",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/museums-victoria-collections-api-postman-collection.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/victoria-australia\/master\/museums-victoria-collections-api-postman-collection.json"
                 },
                 {
                     "type": "x-documentation",
@@ -208,15 +159,11 @@
             "properties": [
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/popular-baby-names-victoria-api-openapi.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/victoria-australia\/master\/popular-baby-names-victoria-api-openapi.json"
                 },
                 {
                     "type": "x-postman-collecction",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/popular-baby-names-victoria-api-postman-collection.json"
-                },
-                {
-                    "type": "x-postman-collecction",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/popular-baby-names-victoria-api-postman-collection.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/victoria-australia\/master\/popular-baby-names-victoria-api-postman-collection.json"
                 },
                 {
                     "type": "x-documentation",
@@ -234,19 +181,37 @@
             "properties": [
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/victorian-heritage-api-openapi.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/victoria-australia\/master\/victorian-heritage-api-openapi.json"
                 },
                 {
                     "type": "x-postman-collecction",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/victorian-heritage-api-postman-collection.json"
-                },
-                {
-                    "type": "x-postman-collecction",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/victorian-heritage-api-postman-collection.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/victoria-australia\/master\/victorian-heritage-api-postman-collection.json"
                 },
                 {
                     "type": "x-documentation",
                     "url": "https:\/\/developer.vic.gov.au\/index.php?option=com_apiportal&view=apitester&usage=api&tab=tests&apiName=Victorian%20Heritage%20API&apiId=36d97216-53b6-4a5c-8754-8b44b26a5e21&menuId=187"
+                }
+            ]
+        },
+        {
+            "name": "Datavic Open Data API",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/logos\/victoria-australia-logo.png",
+            "humanURL": "https:\/\/www.vic.gov.au",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/victoria-australia\/master\/datavic-open-data-api-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/victoria-australia\/master\/datavic-open-data-api-postman-collection.json"
+                },
+                {
+                    "type": "x-documentation",
+                    "url": "https:\/\/developer.vic.gov.au\/index.php?option=com_apiportal&view=apitester&usage=api&tab=tests&apiName=Datavic%20Open%20Data%20API&apiId=e78027c6-4402-4049-b030-89b05daa624a&menuId=187"
                 }
             ]
         }
@@ -284,6 +249,10 @@
         {
             "type": "Login",
             "url": "https:\/\/developer.vic.gov.au\/sign-in"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/30842-2019-12-20-14-19-05.json"
         },
         {
             "type": "Privacy",

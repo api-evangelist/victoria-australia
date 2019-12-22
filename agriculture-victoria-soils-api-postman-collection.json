@@ -1,5 +1,5 @@
 {
-    "id": "458150aa40b85c69119f3e4d15c33244",
+    "id": "87f93dd6cf30d9d329258dc3836438ae",
     "name": "Agriculture Victoria Soils API",
     "description": null,
     "auth": null,
@@ -10,7 +10,7 @@
     "folders": [],
     "requests": [
         {
-            "id": "0419ac20ccb50efd38b71fb980fdfaa8",
+            "id": "edbd42c8c6ed0f5107cbec1dbbb3d6d0",
             "name": "Soil Parameter Estimates",
             "url": "http:\/\/api.vic.gov.au:443\/avr\/soils-api\/v1.0\/estimates",
             "description": "Soil Parameter Estimates\n",
@@ -44,7 +44,7 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "458150aa40b85c69119f3e4d15c33244",
+            "collectionId": "87f93dd6cf30d9d329258dc3836438ae",
             "rawModeData": ""
         }
     ]

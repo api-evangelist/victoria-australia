@@ -1,5 +1,5 @@
 {
-    "id": "26380c7b46453d9bd920eab81099b5dd",
+    "id": "43f0475b9f7338308c48ea21a3e9a1ce",
     "name": "Popular Baby Names Victoria API",
     "description": null,
     "auth": null,
@@ -10,7 +10,7 @@
     "folders": [],
     "requests": [
         {
-            "id": "9adc2c3d467b9cd9e73d1033f3497899",
+            "id": "6cc52254c17e7f32cf16e834ea9fb150",
             "name": "Top 100 popular baby names",
             "url": "http:\/\/api.vic.gov.au:443\/bdm\/names\/v1.0\/popular-baby-names",
             "description": "Top 100 most popular baby names in the State of Victoria",
@@ -72,7 +72,7 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "26380c7b46453d9bd920eab81099b5dd",
+            "collectionId": "43f0475b9f7338308c48ea21a3e9a1ce",
             "rawModeData": ""
         }
     ]
